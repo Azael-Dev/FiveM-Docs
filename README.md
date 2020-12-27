@@ -1,7 +1,7 @@
-FiveM Documentation
+Azael - FiveM Documentation
 ===================
 
-Source of [docs.fivem.net][docs].
+Source of [docs.azael.dev][docs] for [fivem.azael.dev][azael].
 
 Development
 -----------
@@ -24,7 +24,8 @@ wget --spider -o ./wget.log -e robots=off -w 1 -r -p http://localhost:1313
 
 More info on that [here][check-dead-links].
 
-[docs]: https://docs.fivem.net
+[azael]: https://fivem.azael.dev
+[docs]: https://docs.azael.dev
 [gohugo]: https://gohugo.io
 [wget]: http://www.gnu.org/software/wget/
 [check-dead-links]: http://n390.com/blog/find-broken-links-using-wget

@@ -1,0 +1,25 @@
+---
+title: การติดตั้งทรัพยากร
+weight: 210
+description: >
+  คำแนะนำทีละขั้นตอนเกี่ยวกับวิธีการติดตั้ง
+---
+
+## ติดตั้งและใช้งาน
+
+- ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_dc-whitelisted` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
+- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_dc-whitelisted` ไว้ด้านล่าง [mysql-async][mysql-async] และ [es_extended][es_extended]
+- นำเข้าไฟล์ `azael_dc_whitelisted.sql` ไปยังฐานข้อมูลให้เรียบร้อย
+
+## ยกเลิกการใช้งาน
+
+- เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_dc-whitelisted`
+- ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_dc-whitelisted`
+
+ตัวอย่าง:
+```
+#ensure azael_dc-whitelisted
+```
+
+[mysql-async]: https://github.com/brouznouf/fivem-mysql-async
+[es_extended]: https://github.com/esx-framework/es_extended
