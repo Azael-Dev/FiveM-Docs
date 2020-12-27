@@ -27,9 +27,9 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
 disableHomeIcon = true
-# editURL = "https://github.com/Azael-Dev/FiveM-Docs/edit/master/content/"
-# github_repo = "https://github.com/Azael-Dev/FiveM-Docs"
-# github_project_repo = "https://github.com/Azael-Dev/FiveM-Docs"
+editURL = "https://github.com/Azael-Dev/azael-fivem-docs/edit/master/content/"
+github_repo = "https://github.com/Azael-Dev/azael-fivem-docs"
+#github_project_repo = "https://github.com/Azael-Dev/azael-fivem-docs"
 offlineSearch = true
 
 [blackfriday]
@@ -57,43 +57,3 @@ weight = 40
 
 [params.ui]
 sidebar_menu_compact = true
-
-# Adds a reading time to the top of each doc.
-# If you want this feature, but occasionally need to remove the Reading time from a single page, 
-# add "hide_readingtime: true" to the page's front matter
-[params.ui.readingtime]
-enable = false
-
-[params.links]
-# End user relevant links. These will show up on left side of footer and in the community page if you have one.
-# [[params.links.user]]
-	# name = "Discord"
-	# url = "https://discord.gg/Ca5W62f"
-	# icon = "fab fa-discord"
-      # desc = "เข้าร่วมกับเราบน Discord"
-# [[params.links.user]]
-	# name ="Facebook"
-	# url = "https://www.facebook.com/AzaelDev.FB"
-	# icon = "fab fa-facebook-square"
-        # desc = "เข้าร่วมกับเราบน Facebook"
-# [[params.links.user]]
-	# name = "Twitter"
-	# url = "https://twitter.com/AzaelDev_TH"
-	# icon = "fab fa-twitter"
-        # desc = "เข้าร่วมกับเราบน Facebook"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
-# [[params.links.developer]]
-	# name = "GitHub"
-	# url = "https://github.com/Azael-Dev"
-	# icon = "fab fa-github"
-        # desc = "เข้าร่วมกับเราบน GitHub"
-# [[params.links.developer]]
-	# name = "Stack Overflow"
-	# url = "https://stackoverflow.com/users/11192981/azael-dev"
-	# icon = "fab fa-stack-overflow"
-        # desc = "เข้าร่วมกับเราบน Stack Overflow"
-# [[params.links.developer]]
-	# name = "contact@azael.dev"
-	# url = "mailto:contact@azael.dev"
-	# icon = "fa fa-envelope"
-        # desc = "ติดต่อเราผ่าน contact@azael.dev"
