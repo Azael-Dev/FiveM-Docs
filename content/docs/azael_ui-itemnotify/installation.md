@@ -32,7 +32,11 @@ ESX.UI.ShowInventoryItemNotification
 
 ## การติดตั้งใน es_extended v1.1.x
 
-[es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.1.x` จะใช้ระบบ `limit` คือ การตรวจสอบการถือไอเทมของตัวละคร หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/classes/player.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_ui-itemnotify` ตามขั้นตอนด้านล่างนี้
+[es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.1.x` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/classes/player.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_ui-itemnotify` ตามขั้นตอนด้านล่างนี้
+
+{{% alert theme="info" %}}
+ตรวจสอบเวอร์ชั่นได้ที่ `es_extended/__resource.lua`
+{{% /alert %}}
 
 ### `self.setMoney`
 
@@ -326,7 +330,11 @@ end
 
 ## การติดตั้งใน es_extended v1.2.x
 
-[es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.2.x` จะใช้ระบบ `weigh` คือ การตรวจสอบการถือไอเทมของตัวละคร หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/classes/player.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_ui-itemnotify` ตามขั้นตอนด้านล่างนี้
+[es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.2.x` จะใช้ระบบ `weigh` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/classes/player.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_ui-itemnotify` ตามขั้นตอนด้านล่างนี้
+
+{{% alert theme="info" %}}
+ตรวจสอบเวอร์ชั่นได้ที่ `es_extended/fxmanifest.lua`
+{{% /alert %}}
 
 ### `self.setAccountMoney`
 
