@@ -24,7 +24,6 @@ SetEntityHealth(GetPlayerPed(-1), 200)
 ```lua
 --SetEntityHealth(GetPlayerPed(-1), 200)
 ```
-
 {{% /alert %}}
 
 ## ยกเลิกการใช้งาน
