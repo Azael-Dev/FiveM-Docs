@@ -10,8 +10,8 @@ menu:
 Azael Documentation
 ===================
 
-ยินดีต้อนรับสู่บ้านใหม่สำหรับเอกสารประกอบการใช้งาน สำหรับคำถาม หรือ ปัญหาใดๆ ที่เกี่ยวข้องกับการใช้งานของคุณ
-สามารถติดต่อกับเราได้ที่ [Discord][discord] หรือ [Facebook][facebook]
+ยินดีต้อนรับสู่บ้านหลังใหม่ สำหรับเอกสารประกอบการใช้งานทรัพยากร [FiveM][fivem] ที่ถูกพัฒนาขึ้นโดย [Azael Dev][home] <br>
+สำหรับคำถามหรือปัญหาใดๆ ที่เกี่ยวข้องกับการใช้งานของคุณ อย่าลังเลที่จะติดต่อกับเราใน [Discord][discord] หรือ [Facebook][facebook]
 
 <div style="font-size: 0;">
   <div style="width: 50%; vertical-align: top; display: inline-block; font-size: 1.05rem; padding-right: 5px;">
@@ -74,5 +74,6 @@ Azael Documentation
 </div>
 
 [home]: https://fivem.azael.dev
+[fivem]: https://fivem.net
 [discord]: https://discord.gg/Ca5W62f
 [facebook]: https://www.facebook.com/AzaelDev.FB
