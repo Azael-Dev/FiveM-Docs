@@ -114,4 +114,3 @@ const delayFadeIn = 1000;
 ```js
 const delayFadeOut = 1000;
 ```
-

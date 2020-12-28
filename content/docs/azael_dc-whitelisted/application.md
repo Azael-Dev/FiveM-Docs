@@ -42,4 +42,3 @@ https://discordapp.com/oauth2/authorize?client_id=CLIENT_ID&scope=bot
 
 [discord]: https://discord.com
 [discord-dev]: https://discord.com/developers/applications
-
