@@ -70,6 +70,14 @@ Azael Documentation
         <li><a href="/docs/azael_db-removeaccounts/config">การตั้งค่าทรัพยากร</a></li>
       </ul>
     </div>
+    <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
+      <h4>azael_give-objects</h4>
+      <ul>
+        <li><a href="/docs/azael_give-objects/installation">การติดตั้งทรัพยากร</a></li>
+        <li><a href="/docs/azael_give-objects/config">การตั้งค่าทรัพยากร</a></li>
+        <li><a href="/docs/azael_give-objects/command">คำสั่งการใช้งาน</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
