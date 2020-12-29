@@ -7,8 +7,8 @@ description: >
 
 ## เริ่มต้นการใช้งาน
 
-- ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_db-health&armor` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
-- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-health&armor` ไว้ด้านล่าง [mysql-async][mysql-async], [es_extended][es_extended] และ [esx_status][esx_status]
+1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_db-health&armor` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
+2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-health&armor` ไว้ด้านล่าง [mysql-async][mysql-async], [es_extended][es_extended] และ [esx_status][esx_status]
 
 {{% alert theme="info" %}}
 หากใช้งานทรัพยากร `AllServerNeed` หรือ `AllServerNeedV2` ของ **Xenon** จะต้องปิดใช้งานรหัสการเพิ่มเลือดในขณะที่เข้าเกม
@@ -28,8 +28,8 @@ SetEntityHealth(GetPlayerPed(-1), 200)
 
 ## ยกเลิกการใช้งาน
 
-- เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_db-health&armor`
-- ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_db-health&armor`
+1. เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_db-health&armor`
+2. ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_db-health&armor`
 
 ตัวอย่าง:
 ```
