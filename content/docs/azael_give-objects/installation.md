@@ -11,7 +11,7 @@ description: >
 2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_give-objects` ไว้ด้านล่าง [es_extended][es_extended]
 3. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_objects` ไว้ด้านล่าง `azael_give-objects`
 
-### รายการ Objects
+### azael_objects
 {{% alert theme="info" %}}
 โฟลเดอร์ `azael_objects` คือ ทรัพยากรเกี่ยวกับ Objects (Prop) ที่เเถมให้ จำนวน 31 รายการ
 {{% /alert %}}
