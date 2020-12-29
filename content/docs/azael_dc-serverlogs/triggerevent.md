@@ -20,13 +20,13 @@ TriggerEvent('azael_discordlogs:sendToDiscord', 'EventName', sendToDiscord, sour
 * **azael_discordlogs:sendToDiscord**
     - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [event_name](../config/#event_name) หากมีการแก้ไขการตั้งค่า
 * **EventName** 
-    - ชื่อของ Webhook ที่ตั้งค่าใน `config.server.lua`
+    - ชื่อของ [webhook](../config/#webhook)
 * **sendToDiscord**
     - ข้อความที่ต้องการส่งไปยังกลุ่ม Discord
 * **source**
     - ไอดีของผู้เล่นฝั่ง Server
 * **^1**
-    - รหัสแถบสีของกล่องข้อความ สามารถดูรหัสสีได้ที่ไฟล์ `config.server.lua`
+    - รหัส [color](../config/#color) ของกล่องข้อความ
 
 ### ตัวอย่างการเพิ่มรหัสทริกเกอร์ฝั่ง Server
 
@@ -113,13 +113,13 @@ TriggerServerEvent('azael_discordlogs:sendToDiscord', 'EventName', sendToDiscord
 * **azael_discordlogs:sendToDiscord**
     - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [event_name](../config/#event_name) หากมีการแก้ไขการตั้งค่า
 * **EventName** 
-    - ชื่อของ Webhook ที่ตั้งค่าใน `config.server.lua`
+    - ชื่อของ [webhook](../config/#webhook)
 * **sendToDiscord**
     - ข้อความที่ต้องการส่งไปยังกลุ่ม Discord
 * **GetPlayerServerId(PlayerId())**
     - ไอดีของผู้เล่นฝั่ง Client
 * **^1**
-    - รหัสแถบสีของกล่องข้อความ สามารถดูรหัสสีได้ที่ไฟล์ `config.server.lua`
+    - รหัส [color](../config/#color) ของกล่องข้อความ
 
 ### ตัวอย่างการเพิ่มรหัสทริกเกอร์ฝั่ง Client
 
