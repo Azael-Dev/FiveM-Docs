@@ -75,7 +75,6 @@ Azael Documentation
       <ul>
         <li><a href="/docs/azael_give-objects/installation">การติดตั้งทรัพยากร</a></li>
         <li><a href="/docs/azael_give-objects/config">การตั้งค่าทรัพยากร</a></li>
-        <li><a href="/docs/azael_give-objects/command">คำสั่งการใช้งาน</a></li>
       </ul>
     </div>
   </div>
