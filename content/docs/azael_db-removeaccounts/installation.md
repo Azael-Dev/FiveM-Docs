@@ -7,13 +7,13 @@ description: >
 
 ## เริ่มต้นการใช้งาน
 
-- ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_db-removeaccounts` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
-- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-removeaccounts` ไว้ด้านล่าง [mysql-async][mysql-async] และ [azael_dc-whitelisted][azael_dc-whitelisted]
+1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_db-removeaccounts` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
+2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-removeaccounts` ไว้ด้านล่าง [mysql-async][mysql-async] และ [azael_dc-whitelisted][azael_dc-whitelisted]
 
 ## ยกเลิกการใช้งาน
 
-- เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_db-removeaccounts`
-- ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_db-removeaccounts`
+1. เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_db-removeaccounts`
+2. ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_db-removeaccounts`
 
 ตัวอย่าง:
 ```
