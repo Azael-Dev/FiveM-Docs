@@ -7,8 +7,8 @@ description: >
 
 ## เริ่มต้นการใช้งาน
 
-- ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_ui-itemnotify` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
-- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_ui-itemnotify` ไว้ด้านล่าง [es_extended][es_extended]
+1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_ui-itemnotify` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
+2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_ui-itemnotify` ไว้ด้านล่าง [es_extended][es_extended]
 
 ## ปิดแจ้งเตือน ESX.UI
 
@@ -602,8 +602,8 @@ TriggerEvent('azael_ui-itemnotify:sendWeaponAmmo', 'remove', weaponName, ammoCou
 
 ## ยกเลิกการใช้งาน
 
-- เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_ui-itemnotify`
-- ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_ui-itemnotify`
+1. เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_ui-itemnotify`
+2. ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_ui-itemnotify`
 
 ตัวอย่าง:
 ```
