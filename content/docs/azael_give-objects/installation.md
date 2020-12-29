@@ -50,7 +50,7 @@ description: >
 | woodbeak              | woodbeak.ydr           | แผ่นไม้                   |
 | weed                  | weed.ydr               | ใบกัญชา                  |
 
-## ติดตั้งไฟล์ export
+## การติดตั้งไฟล์ export
 
 ### es_extended
 
@@ -129,7 +129,7 @@ client_scripts
 ![Export esx_inventoryhud](/azael_give-objects/export_dpemotes.png "Export esx_inventoryhud")
 
 
-## ติดตั้งใน es_extended v1.1.x
+## การติดตั้งใน es_extended v1.1.x
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.1.x` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_give-objects` ตามขั้นตอนด้านล่างนี้
 
@@ -343,7 +343,7 @@ xPlayer.addAccountMoney(pickup.name, pickup.count)
 TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, pickup.name)
 ```
 
-## ติดตั้งใน es_extended v1.2.x
+## การติดตั้งใน es_extended v1.2.x
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.2.x` จะใช้ระบบ `weigh` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_give-objects` ตามขั้นตอนด้านล่างนี้
 
