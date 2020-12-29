@@ -74,7 +74,7 @@ server_scripts
 '@azael_give-objects/export/server/extended.server.lua'
 ```
 
-![Export es_extended](/azael_give-objects/export_es_extended.png "Export es_extended")
+![Export es_extended](/resources/azael_give-objects/export_es_extended.png "Export es_extended")
 
 ### esx_inventoryhud
 
@@ -98,7 +98,7 @@ client_scripts
 '@azael_give-objects/export/client/inventory.client.js'
 ```
 
-![Export esx_inventoryhud](/azael_give-objects/export_esx_inventoryhud.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/export_esx_inventoryhud.png "Export esx_inventoryhud")
 
 ### dpemotes
 
@@ -126,7 +126,7 @@ client_scripts
 '@azael_give-objects/export/client/dpemotes.client.lua'
 ```
 
-![Export esx_inventoryhud](/azael_give-objects/export_dpemotes.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/export_dpemotes.png "Export esx_inventoryhud")
 
 
 ## การติดตั้งใน es_extended v1.1.x

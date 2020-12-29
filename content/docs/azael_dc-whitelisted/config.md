@@ -98,7 +98,7 @@ Config['discord_role_whitelist'] = 'Role ID'
 วิธีการรับรหัส ให้พิมพ์ในกลุ่ม @ชื่อบทบาทไวริส แล้วเพิ่มเครื่องหมาย \ ไว้ข้างหน้า <br> ยกตัวอย่าง: \\@ชื่อบทบาทไวริส
 {{% /alert %}}
 
-![Check role id](/azael_dc-whitelisted/check_role_id.gif "Check role id")
+![Check role id](/resources/azael_dc-whitelisted/check_role_id.gif "Check role id")
 
 ### `discord_guild_id`
 
@@ -114,7 +114,7 @@ Config['discord_guild_id'] = 'Guild ID'
 วิธีการรับรหัส ไปที่กลุ่ม Discord คลิกขวาที่รูปประจำตัวกลุ่ม และเลือก คัดลอก ID
 {{% /alert %}}
 
-![Check guild id](/azael_dc-whitelisted/check_guild_id.gif "Check guild id")
+![Check guild id](/resources/azael_dc-whitelisted/check_guild_id.gif "Check guild id")
 
 ### `discord_bot_token`
 
@@ -128,7 +128,7 @@ Config['discord_bot_token'] = 'Bot Token'
 วิธีการรับ Token ของ Discord Bot ให้ไปที่ [Discord Developer Portal](https://discord.com/developers/applications/) เลือก แอปพลิเคชันที่สร้างไว้ เลือกเมนู Bot ดำเนินการ คัดลอก Token
 {{% /alert %}}
 
-![Check bot token](/azael_dc-whitelisted/check_discord_bot_token.gif "Check bot token")
+![Check bot token](/resources/azael_dc-whitelisted/check_discord_bot_token.gif "Check bot token")
 
 ### `server_maintenance_enable`
 
@@ -155,7 +155,7 @@ Config['discord_role_whitelist_maintenance'] = 'Maintenance Role ID'
 วิธีการรับรหัส ให้พิมพ์ในกลุ่ม @ชื่อบทบาทไวริส แล้วเพิ่มเครื่องหมาย \ ไว้ข้างหน้า <br> ยกตัวอย่าง: \\@ชื่อบทบาทไวริส
 {{% /alert %}}
 
-![Check role id](/azael_dc-whitelisted/check_role_id.gif "Check role id")
+![Check role id](/resources/azael_dc-whitelisted/check_role_id.gif "Check role id")
 
 ### `discord_webhook_logs`
 
