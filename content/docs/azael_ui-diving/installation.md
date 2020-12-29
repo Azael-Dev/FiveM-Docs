@@ -7,15 +7,15 @@ description: >
 
 ## เริ่มต้นการใช้งาน
 
-- ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_ui-diving` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
-- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-health&armor` ไว้ด้านล่าง [mysql-async][mysql-async], [es_extended][es_extended] และ [esx_status]
-- สำหรับ [es_extended][es_extended] เวอร์ชั่น `1.1.x` นำเข้าไฟล์ `azael_diving-esx_limit.sql` ไปยังฐานข้อมูลให้เรียบร้อย
-- สำหรับ [es_extended][es_extended] เวอร์ชั่น `1.2.x` นำเข้าไฟล์ `azael_diving-esx_weight.sql` ไปยังฐานข้อมูลให้เรียบร้อย
+1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_ui-diving` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
+2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-health&armor` ไว้ด้านล่าง [mysql-async][mysql-async], [es_extended][es_extended] และ [esx_status]
+3. สำหรับ [es_extended][es_extended] เวอร์ชั่น `1.1.x` นำเข้าไฟล์ `azael_diving-esx_limit.sql` ไปยังฐานข้อมูลให้เรียบร้อย
+4. สำหรับ [es_extended][es_extended] เวอร์ชั่น `1.2.x` นำเข้าไฟล์ `azael_diving-esx_weight.sql` ไปยังฐานข้อมูลให้เรียบร้อย
 
 ## ยกเลิกการใช้งาน
 
-- เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_ui-diving`
-- ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_ui-diving`
+1. เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_ui-diving`
+2. ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_ui-diving`
 
 ตัวอย่าง:
 ```
