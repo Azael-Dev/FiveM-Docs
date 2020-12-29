@@ -7,15 +7,16 @@ description: >
 
 ## เริ่มต้นการใช้งาน
 
-- ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_give-objects` และ `azael_objects` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
-- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_give-objects` ไว้ด้านล่าง [es_extended][es_extended]
-- เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_objects` ไว้ด้านล่าง `azael_give-objects`
+1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_give-objects` และ `azael_objects` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
+2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_give-objects` ไว้ด้านล่าง [es_extended][es_extended]
+3. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_objects` ไว้ด้านล่าง `azael_give-objects`
 
+### รายการ Objects
 {{% alert theme="info" %}}
-สำหรับโฟลเดอร์ `azael_objects` จะเป็นทรัพยากรเกี่ยวกับ Objects (Prop) ที่เเถมให้ จำนวน 31 รายการ
+โฟลเดอร์ `azael_objects` คือ ทรัพยากรเกี่ยวกับ Objects (Prop) ที่เเถมให้ จำนวน 31 รายการ
 {{% /alert %}}
 
-| Model Name            | File Name              | Item Name                |
+| Model Name            | File Name              | Description              |
 |---------------------- |------------------------|--------------------------|
 | belt                  | belt.ydr               | เข็มขัด                    |
 | card                  | card.ydr               | บัตรประจำตัว               |
@@ -49,7 +50,7 @@ description: >
 | woodbeak              | woodbeak.ydr           | แผ่นไม้                   |
 | weed                  | weed.ydr               | ใบกัญชา                  |
 
-## การติดตั้งไฟล์ export
+## ติดตั้งไฟล์ export
 
 ### es_extended
 
@@ -128,7 +129,7 @@ client_scripts
 ![Export esx_inventoryhud](/azael_give-objects/export_dpemotes.png "Export esx_inventoryhud")
 
 
-## การติดตั้งใน es_extended v1.1.x
+## ติดตั้งใน es_extended v1.1.x
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.1.x` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_give-objects` ตามขั้นตอนด้านล่างนี้
 
@@ -342,7 +343,7 @@ xPlayer.addAccountMoney(pickup.name, pickup.count)
 TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, pickup.name)
 ```
 
-## การติดตั้งใน es_extended v1.2.x
+## ติดตั้งใน es_extended v1.2.x
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.2.x` จะใช้ระบบ `weigh` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_give-objects` ตามขั้นตอนด้านล่างนี้
 
@@ -516,8 +517,8 @@ TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, p
 
 ## ยกเลิกการใช้งาน
 
-- เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_give-objects`
-- ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_give-objects`
+1. เปิดไฟล์ `server.cfg` ค้นหา `ensure azael_give-objects`
+2. ทำการเพิ่ม `#` ไว้ข้างหน้า `ensure azael_give-objects`
 
 ตัวอย่าง:
 
