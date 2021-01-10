@@ -88,7 +88,9 @@ AZAEL.CLIENT.CONFIG.Types = {
     'item_money': AZAEL.CLIENT.OBJECT.CONFIG.Money,
     'item_account': AZAEL.CLIENT.OBJECT.CONFIG.Money,
     'item_weapon': AZAEL.CLIENT.OBJECT.CONFIG.Weapon,
-    'item_ammo': AZAEL.CLIENT.OBJECT.CONFIG.Ammo
+    'item_ammo': AZAEL.CLIENT.OBJECT.CONFIG.Ammo,
+    'item_key': AZAEL.CLIENT.OBJECT.CONFIG.Item,
+    'item_keyhouse': AZAEL.CLIENT.OBJECT.CONFIG.Item
 };
 ```
 
@@ -97,6 +99,8 @@ AZAEL.CLIENT.CONFIG.Types = {
 - **item_account** = เงินผิดกฎหมาย
 - **item_weapon** = อาวุธ
 - **item_ammo** = กระสุน
+- **item_key** = กุญแจ ยานพาหนะ
+- **item_keyhouse** = กุญแจ บ้าน
 
 ### `Blacklists`
 
@@ -170,8 +174,6 @@ AZAEL.CLIENT.CONFIG.Animations = {
     },
 
     Give: {
-        Synced: true,
-
         Request: {
             A: {
                 Dict: 'reaction@intimidation@1h',
@@ -234,7 +236,6 @@ AZAEL.CLIENT.CONFIG.Animations = {
     - **Pocket** = เอาออกจากตัวละคร (ภาพเคลื่อนไหว 1)
         - **Enable** = เปิดใช้งาน ภาพเคลื่อนไหว เอาออกจากตัวละคร
 - **Give** = ภาพเคลื่อนไหว ขณะที่ ส่ง และ รับ
-    - **Synced** = เปิดใช้งาน ซิงค์ภาพเคลื่อนไหว
     - **Request** = ภาพเคลื่อนไหว ขณะที่ ส่ง
         - **A** = ภาพเคลื่อนไหว 1
             - **Dict** = พจนานุกรม
@@ -269,6 +270,8 @@ AZAEL.CLIENT.CONFIG.Animations = {
 
 ```js
 AZAEL.CLIENT.CONFIG.Objects = {
+    Enable: true,
+
     Time: {
         Pickup: 1000,
         Remove: 500,
@@ -279,7 +282,7 @@ AZAEL.CLIENT.CONFIG.Objects = {
     TimeOut: 3000
 };
 ```
-
+- **Enable** = เปิดใช้งาน แสดงวัตถุ
 - **Time** = เวลาที่แสดง วัตถุ (มิลลิวินาที)
     - **Pickup** = ขณะที่ เก็บ
     - **Remove** = ขณะที่ ทิ้ง
@@ -288,7 +291,8 @@ AZAEL.CLIENT.CONFIG.Objects = {
 - **TimeOut** = หากไม่สามารถโหลด วัตถุ ได้ จะข้ามขั้นตอนภายในเวลาที่กำหนด (มิลลิวินาที)
 
 {{% alert theme="info" %}}
-1000 มิลลิวินาที มีค่าเท่ากับ 1 วินาที
+1000 มิลลิวินาที มีค่าเท่ากับ 1 วินาที <br>
+**true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน
 {{% /alert %}}
 
 ### `Images`
@@ -298,19 +302,33 @@ AZAEL.CLIENT.CONFIG.Objects = {
 ```js
 AZAEL.CLIENT.CONFIG.Images = {
     Enable: true,
-    Inventory: true,
-    Path: 'html/img/items',
+
+    Inventory: {
+        Enable: true,
+        Path: 'html/img/items',
+    },
+
+    Custom: [
+        'cash',
+        'money',
+        'black_money',
+        'key',
+        'keyhouse'
+    ],
+
     Bone: 28422,
     Width: 0.1,
     Height: 0.2,
-    Distance: 50.00,
+    Distance: 50,
+
     Debug: true
 };
 ```
 
 - **Enable** = เปิดใช้งาน แสดงรูปภาพ หากไม่พบวัตถุ ในการตั้งค่า
-- **Inventory** = เปิดใช้งานรูปภาพ จาก กระเป๋า
-- **Path** = ที่อยู่ไฟล์รูปภาพ จาก กระเป๋า ที่ใช้งาน (ไม่ต้องระบุชื่อของทรัพยากร)
+- **Inventory** = รูปภาพ จาก กระเป๋า
+    - **Enable** = เปิดใช้งาน รูปภาพ จาก กระเป๋า
+    - **Path** = ที่อยู่ไฟล์รูปภาพ ของ กระเป๋า ที่ใช้งาน (ไม่ต้องระบุชื่อของทรัพยากร)
 - **Bone** = [รหัสกระดูก](https://wiki.gtanet.work/index.php?title=Bones) แนบรูปภาพ
 - **Width** = ความกว้าง ของรูปภาพ
 - **Height** = ความสูง ของรูปภาพ
@@ -400,10 +418,10 @@ AZAEL.CLIENT.CONFIG.Events = {
 การควบคุม ในขณะที่เล่นภาพเคลื่อนไหว
 
 ```js
-AZAEL.CLIENT.CONFIG.Controls = {                            // การควบคุม ในขณะที่เล่นภาพเคลื่อนไหว
-    Enable: true,                                           // เปิดใช้งาน การควบคุม หรือไม่? (true เท่ากับ เปิดใช้งาน | false เท่ากับ ปิดใช้งาน)
-                                                            // หมายเหตุ: ไม่เเนะนำให้ปิดใช้งาน เพราะอาจจะเกิดความผิดพลาดในขณะที่เล่นภาพเคลื่อนไหว
-    List: {                                                 // รายละเอียด การควบคุม สามารถดูได้ที่ https://docs.fivem.net/docs/game-references/controls/#controls
+AZAEL.CLIENT.CONFIG.Controls = {
+    Enable: true,
+
+    List: {
         0: {
             Group: 0,
             Control: 0,

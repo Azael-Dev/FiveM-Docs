@@ -89,7 +89,7 @@ client_scripts
 มองหา
 
 ```lua
-'config.lua'
+"config.lua"
 ```
 
 เพิ่มรหัสนี้ไว้ด้านล่าง
@@ -98,7 +98,29 @@ client_scripts
 '@azael_give-objects/export/client/inventory.client.js'
 ```
 
-![Export esx_inventoryhud](/resources/azael_give-objects/export_esx_inventoryhud.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/export_esx_inventoryhud-client.png "Export esx_inventoryhud")
+
+<br>
+
+ค้นหา
+
+```lua
+server_scripts
+```
+
+มองหา
+
+```lua
+"config.lua"
+```
+
+เพิ่มรหัสนี้ไว้ด้านล่าง
+
+```lua
+'@azael_give-objects/export/server/inventory.server.lua'
+```
+
+![Export esx_inventoryhud](/resources/azael_give-objects/export_esx_inventoryhud-server.png "Export esx_inventoryhud")
 
 ### dpemotes
 
@@ -128,6 +150,59 @@ client_scripts
 
 ![Export esx_inventoryhud](/resources/azael_give-objects/export_dpemotes.png "Export esx_inventoryhud")
 
+## การติดตั้งใน esx_inventoryhud
+
+{{% alert theme="info" %}}
+ไม่ต้องดำเนินการตามขั้นตอนนี้ หากคุณไม่ได้ใช้งานระบบส่ง กุญแจ ตามตัวอย่างรหัสด้านล่างนี้
+{{% /alert %}}
+
+ไปที่ `esx_inventoryhud/server/main.lua`
+
+## `esx_inventoryhud:updateKey`
+
+ค้นหา
+
+```lua
+local targetXPlayer = ESX.GetPlayerFromId(target)
+```
+
+เพิ่มรหัสนี้ไว้ด้านล่าง
+
+```lua
+if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(sourceXPlayer.source, targetXPlayer.source) then
+	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'The person or you is ~y~busy~s~')
+end
+```
+
+### `item_key`
+
+ค้นหา
+
+```lua
+TriggerClientEvent("esx_inventoryhud:getOwnerVehicle", target)
+```
+
+เพิ่มรหัสนี้ไว้ด้านล่าง
+
+```lua
+TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, 'key', true)
+TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, 'key', false)
+```
+
+### `item_keyhouse`
+
+ค้นหา
+
+```lua
+TriggerClientEvent("esx_inventoryhud:getOwnerHouse", target)
+```
+
+เพิ่มรหัสนี้ไว้ด้านล่าง
+
+```lua
+TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, 'keyhouse', true)
+TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, 'keyhouse', false)
+```
 
 ## การติดตั้งใน es_extended v1.1.x
 
