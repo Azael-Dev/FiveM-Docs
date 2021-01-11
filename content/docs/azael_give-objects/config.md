@@ -457,7 +457,7 @@ AZAEL.CLIENT.CONFIG.Controls = {
 
 {{% alert theme="info" %}}
 **true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน<br>
-สามารถดูรายรหัส การควบคุม ได้ที่ [FiveM Controls](https://docs.fivem.net/docs/game-references/controls/#controls)
+สามารถดูรหัส การควบคุม ได้ที่ [FiveM Controls](https://docs.fivem.net/docs/game-references/controls/#controls)
 {{% /alert %}}
 
 ## การตั้งค่า Objects
