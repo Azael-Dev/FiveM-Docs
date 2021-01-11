@@ -45,6 +45,13 @@ Azael Documentation
         <li><a href="/docs/azael_ui-diving/config">การตั้งค่าทรัพยากร</a></li>
       </ul>
     </div>
+    <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
+      <h4>azael_ui-acceptitems</h4>
+      <ul>
+        <li><a href="/docs/azael_ui-acceptitems/installation">การติดตั้งทรัพยากร</a></li>
+        <li><a href="/docs/azael_ui-acceptitems/config">การตั้งค่าทรัพยากร</a></li>
+      </ul>
+    </div>
   </div>
   <div style="width: 50%; vertical-align: top; display: inline-block; font-size: 1.05rem;">
     <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
