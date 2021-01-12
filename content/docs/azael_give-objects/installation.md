@@ -174,6 +174,10 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(sourceXPlayer.source, targetXPlayer.s
 end
 ```
 
+{{% alert theme="info" %}}
+หากคุณใช้งาน [azael_ui-acceptitems](https://fivem.azael.dev/digishop/azael-ui-acceptitems/) ให้วางรหัสนี้ไว้ด้านล่างเงื่อนไขของฟังก์ชัน [AZAEL.ACCEPT_ITEMS.GetPlayerRequest](../../azael_ui-acceptitems/installation/#esx_inventoryhudupdatekey)
+{{% /alert %}}
+
 ### `item_key`
 
 ค้นหา
@@ -227,6 +231,10 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(sourceXPlayer.source, targetXPlayer.s
 	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'The person or you is ~y~busy~s~')
 end
 ```
+
+{{% alert theme="info" %}}
+หากคุณใช้งาน [azael_ui-acceptitems](https://fivem.azael.dev/digishop/azael-ui-acceptitems/) ให้วางรหัสนี้ไว้ด้านล่างเงื่อนไขของฟังก์ชัน [AZAEL.ACCEPT_ITEMS.GetPlayerRequest](../../azael_ui-acceptitems/installation/#esxgiveinventoryitem)
+{{% /alert %}}
 
 ### `item_standard`
 
@@ -441,6 +449,10 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(sourceXPlayer.source, targetXPlayer.s
 	return sourceXPlayer.showNotification('The person or you is ~y~busy~s~')
 end
 ```
+
+{{% alert theme="info" %}}
+หากคุณใช้งาน [azael_ui-acceptitems](https://fivem.azael.dev/digishop/azael-ui-acceptitems/) ให้วางรหัสนี้ไว้ด้านล่างเงื่อนไขของฟังก์ชัน [AZAEL.ACCEPT_ITEMS.GetPlayerRequest](../../azael_ui-acceptitems/installation/#esxgiveinventoryitem-1)
+{{% /alert %}}
 
 ### `item_standard`
 
