@@ -54,7 +54,7 @@ AZAEL.SERVER.CONFIG.Currencies = {
 - **BlackMoney** = ประเภท เงินผิดกฎหมาย
     - **Dirty Money** = ชื่อที่ใช้ในการแสดง
 
-    ### `Types`
+### `Types`
 
 ชื่อที่ใช้แสดงแทน ประเภทข้อมูล ที่กำหนดเอง
 
