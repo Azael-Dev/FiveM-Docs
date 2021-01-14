@@ -304,7 +304,7 @@ AZAEL.CLIENT.CONFIG.Controls = {
 
 ### `Locations`
 
-ไม่สามารถใช้งานได้ในพื้นที่นี้ เพื่อป้องกันการเกิดบัคจาก Native: [SET_NUI_FOCUS][SET_NUI_FOCUS]
+ไม่สามารถใช้งานได้ในพื้นที่นี้ เพื่อป้องกันการเกิดข้อผิดพลาดจาก [SET_NUI_FOCUS][SET_NUI_FOCUS]
 
 ```js
 AZAEL.CLIENT.CONFIG.Locations  = {
