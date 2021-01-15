@@ -189,6 +189,8 @@ AZAEL.CLIENT.CONFIG.Animations = {
         },
     
         Receive: {
+            Enable: true,
+
             A: {
                 Dict: 'mp_common',
                 Anim: 'givetake1_b',
@@ -246,6 +248,7 @@ AZAEL.CLIENT.CONFIG.Animations = {
             - **Anim** = ชื่อ
             - **Delay** = ความล้าช้า (มิลลิวินาที)
     - **Receive** = ภาพเคลื่อนไหว ขณะที่ ส่ง
+        - **Enable** = เปิดใช้งาน ภาพเคลื่อนไหว  ผู้รับ
         - **A** = ภาพเคลื่อนไหว 1
             - **Dict** = พจนานุกรม
             - **Anim** = ชื่อ
@@ -329,6 +332,7 @@ AZAEL.CLIENT.CONFIG.Images = {
 - **Inventory** = รูปภาพ จาก กระเป๋า
     - **Enable** = เปิดใช้งาน รูปภาพ จาก กระเป๋า
     - **Path** = ที่อยู่ไฟล์รูปภาพ ของ กระเป๋า ที่ใช้งาน (ไม่ต้องระบุชื่อของทรัพยากร)
+- **Custom** = รูปภาพ เพิ่มเติมที่กำหนดเอง (ที่อยู่ไฟล์รูปภาพโฟลเดอร์ `images`)
 - **Bone** = [รหัสกระดูก](https://wiki.gtanet.work/index.php?title=Bones) แนบรูปภาพ
 - **Width** = ความกว้าง ของรูปภาพ
 - **Height** = ความสูง ของรูปภาพ
