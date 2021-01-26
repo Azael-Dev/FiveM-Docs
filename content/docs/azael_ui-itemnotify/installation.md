@@ -235,7 +235,7 @@ TriggerClientEvent('esx:addInventoryItem', self.source, {label = weaponLabel}, 1
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-TriggerClientEvent('esx:addInventoryItem', self.source, {label = weaponLabel}, 1)
+TriggerEvent('azael_ui-itemnotify:sendWeapon', 'add', weaponName, ammo, self.source)
 ```
 
 ### `self.addWeaponComponent`
