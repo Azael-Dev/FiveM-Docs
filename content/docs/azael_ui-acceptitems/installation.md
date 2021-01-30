@@ -31,7 +31,7 @@ server_scripts
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-'@azael_ui-acceptitems/export/server/extended.server.lua'
+'@azael_ui-acceptitems/export/server/function.server.lua'
 ```
 
 ![Export es_extended](/resources/azael_ui-acceptitems/export_es_extended.png "Export es_extended")
@@ -55,7 +55,7 @@ server_scripts
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-'@azael_ui-acceptitems/export/server/inventory.server.lua'
+'@azael_ui-acceptitems/export/server/function.server.lua'
 ```
 
 ![Export esx_inventoryhud](/resources/azael_ui-acceptitems/export_esx_inventoryhud.png "Export esx_inventoryhud")

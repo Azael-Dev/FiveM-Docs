@@ -188,15 +188,8 @@ AZAEL.CLIENT.CONFIG.Events = {
 
 ```js
 AZAEL.CLIENT.CONFIG.Messages = {
-    DrawText: {
-        Enable: true,
-        Font: 'sarabun',
-        Size: 0.4,
-        Position: {
-            X: 0.5,
-            Y: 0.8
-        },
-        Text: 'ยกเลิกโดยอัตโนมัติ ใน ~y~ %TIME% ~s~ วินาที'
+    UI: {
+        Enable: true
     },
 
     ESX: {
@@ -245,14 +238,8 @@ AZAEL.CLIENT.CONFIG.Messages = {
 };
 ```
 
-- **DrawText** = เเสดงข้อความนับถอยหลัง สำหรับ ผู้ส่ง
+- **UI** = เเสดงข้อความนับถอยหลัง สำหรับ ผู้ส่ง
     - **Enable** = เปิดใช้งาน เเสดงข้อความนับถอยหลัง สำหรับ ผู้ส่ง
-    - **Font** = แบบ อักษร (โฟลเดอร์ `stream`)
-    - **Size** = ขนาด อักษร
-    - **Position** = ตำแหน่ง ข้อความ
-        - **X** = ตำแหน่ง X
-        - **Y** = ตำแหน่ง Y
-    - **Text** = ข้อความ DrawText
 - **ESX** = เเจ้งเตือน ESX Framework
     - **Text** = ข้อความ
         - **Requester** = ข้อความ ผู้ส่ง
@@ -271,35 +258,6 @@ AZAEL.CLIENT.CONFIG.Messages = {
 1000 มิลลิวินาที มีค่าเท่ากับ 1 วินาที<br>
 **true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน<br>
 หากเปิดใช้งานการเเจ้งเตือน pNotify ระบบจะปิดใช้งานการแแจ้งเตือน ESX โดยทันที
-{{% /alert %}}
-
-### `Controls`
-
-การควบคุม ในขณะที่เเสดงกล่องข้อความ UI
-
-```js
-AZAEL.CLIENT.CONFIG.Controls = { 
-    Enable: true,
-
-    List: {
-        0: {
-            Group: 0,
-            Control: 249,
-            Enable: true
-        }
-    }
-};
-```
-
-- **Enable** = เปิดใช้งาน การควบคุม ในขณะที่เล่นภาพเคลื่อนไหว
-- **List** = รายการ
-    - **Group** = รหัส กลุ่ม
-    - **Control** = รหัส การควบคุม
-    - **Enable** = เปิดใช้งาน ปิดการควบคุม
-
-{{% alert theme="info" %}}
-**true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน<br>
-สามารถดูรหัส การควบคุม ได้ที่ [FiveM Controls](https://docs.fivem.net/docs/game-references/controls/#controls)
 {{% /alert %}}
 
 ### `Locations`
