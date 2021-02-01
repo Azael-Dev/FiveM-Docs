@@ -277,6 +277,21 @@ Config['whitelist_onhold_queue_point'] = false
 - **true** = เปิดใช้งาน
 - **false** = ปิดใช้งาน
 
+### `whitelist_queue_connect`
+
+Queue สำหรับการตรวจสอบข้อมูลของผู้เล่น (เหมาะสำหรับเซิร์ฟเวอร์ที่มีผู้เล่นเป็นจำนวนมาก)
+
+```lua
+Config['whitelist_queue_connect'] = {
+	['enable'] = true,
+	['limit'] = 10,
+	['refresh'] = 3
+}
+```
+- **enable** = เปิดใช้งาน Queue
+- **limit** = จำนวนผู้เล่นสูงสุดต่อรอบ
+- **refresh** = เวลาในการตรวจสอบ Queue
+
 ### `queue_rocademption`
 
 เปิดใช้งาน Queue - Rocademption ระบบที่ใช้สำหรับการรอเชื่อมต่อกับเซิร์ฟเวอร์ในกรณีที่เซิร์ฟเวอร์เต็ม ผู้เล่นจะต้องรอให้เซิร์ฟเวอร์ว่างก่อนจึงจะสามารถเชื่อมต่อเข้าไปยังเซิร์ฟเวอร์ได้
@@ -358,6 +373,19 @@ Config['queue_bonus_points'] = 25
 ```
 
 - ระบุเฉพาะ **ตัวเลข** เท่านั้น
+
+### `queue_emoji_lists`
+
+รายการ Emoji ของระบบ Queue
+
+```lua
+Config['queue_emoji_lists'] = {
+	'❌',
+	'⭕'
+}
+```
+
+- [Emoji Unicode Tables](https://apps.timwhitlock.info/emoji/tables/unicode)
 
 ### `blacklisted_enable`
 
