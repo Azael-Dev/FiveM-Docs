@@ -8,7 +8,7 @@ baseURL = "/"
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
-disableKinds = ["taxonomy", "taxonomyTerm", "home"]
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # Highlighting config
 pygmentsCodeFences = true
