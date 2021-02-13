@@ -10,6 +10,8 @@ description: >
 1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_db-health&armor` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
 2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_db-health&armor` ไว้ด้านล่าง [mysql-async][mysql-async], [es_extended][es_extended] และ [esx_status][esx_status]
 
+**หมายเหตุ:** ไม่เเนะนำให้รีสตาร์ททรัพยากรนี้ เนื่องจากทรัพยากรนี้ทำงานร่วมกับทรัพยากร [esx_status](https://github.com/esx-framework/esx_status) เเละอาจจะทำให้เกิดข้อผิดพลาดได้
+
 {{% alert theme="info" %}}
 หากใช้งานทรัพยากร `AllServerNeed` หรือ `AllServerNeedV2` ของ **Xenon** จะต้องปิดใช้งานรหัสการเพิ่มเลือดในขณะที่เข้าเกม
 
