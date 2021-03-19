@@ -8,7 +8,7 @@ description: >
 ## เริ่มต้นการใช้งาน
 
 1. ดาวน์โหลดและแตกไฟล์ลงในโฟลเดอร์ `resources` ของคุณ ชื่อของทรัพยากรจะต้องเป็น `azael_dc-serverlogs` ห้ามแก้ไขชื่อของทรัพยากรโดยเด็ดขาด เนื่องจากทรัพยากรจะไม่ทำงาน
-2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_dc-serverlogs` ไว้ด้านล่าง [es_extended][es_extended]
+2. เปิดไฟล์ `server.cfg` เพิ่ม `ensure azael_dc-serverlogs` ไว้ด้านล่าง [screenshot-basic][screenshot-basic]
 
 ## ยกเลิกการใช้งาน
 
@@ -20,4 +20,4 @@ description: >
 #ensure azael_dc-serverlogs
 ```
 
-[es_extended]: https://github.com/esx-framework/es_extended
+[screenshot-basic]: github.com/citizenfx/screenshot-basic

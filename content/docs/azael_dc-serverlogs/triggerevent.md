@@ -10,23 +10,33 @@ description: >
 การติดตั้งรหัสทริกเกอร์ (Trigger) เพื่อรับกิจกรรม (Event) จากทรัพยากรอื่นฝั่ง Server
 
 ### รหัสทริกเกอร์ฝั่ง Server
+
+###### ภาษา Lua
+
 ```lua
 local sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord'
-TriggerEvent('azael_discordlogs:sendToDiscord', 'EventName', sendToDiscord, source, '^1')
+TriggerEvent('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, source, '^1')
+```
+
+###### ภาษา JavaScript
+
+```js
+const sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord';
+emit('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, source, '^1');
 ```
 
 ### รายละเอียดรหัสทริกเกอร์ฝั่ง Server
 
-* **azael_discordlogs:sendToDiscord**
-    - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [event_name](../config/#event_name) หากมีการแก้ไขการตั้งค่า
+* **azael_dc-serverlogs:sendToDiscord**
+    - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [Event](../config/#options) หากมีการแก้ไขการตั้งค่า
 * **EventName** 
-    - ชื่อของ [webhook](../config/#webhook)
+    - ชื่อของ [webhook](../config/#webhooks)
 * **sendToDiscord**
     - ข้อความที่ต้องการส่งไปยังกลุ่ม Discord
 * **source**
     - ไอดีของผู้เล่นฝั่ง Server
 * **^1**
-    - รหัส [color](../config/#color) ของกล่องข้อความ
+    - รหัส [color](../config/#colors) ของกล่องข้อความ
 
 ### ตัวอย่างการเพิ่มรหัสทริกเกอร์ฝั่ง Server
 
@@ -60,7 +70,7 @@ AddEventHandler('esx:useItem', function(itemName)
         ESX.UseItem(source, itemName)
 
         local sendToDiscord = '' .. xPlayer.name .. ' ใช้ ' .. ESX.GetItemLabel(itemName) .. ' จำนวน 1 Ea.'
-        TriggerEvent('azael_discordlogs:sendToDiscord', 'UseItem', sendToDiscord, xPlayer.source, '^3')
+        TriggerEvent('azael_dc-serverlogs:sendToDiscord', 'UseItem', sendToDiscord, xPlayer.source, '^3')
     else
         xPlayer.showNotification(_U('act_imp'))
     end
@@ -69,29 +79,29 @@ end)
 
 ### ตัวอย่างการตั้งค่า Webhook ฝั่ง Server
 
-ไปที่ `azael_dc-serverlogs/config.server.lua`
+ไปที่ `config/default/server.config.js`
 
 ##### ก่อนตั้งค่า Webhook
 
-```lua
-Config['webhook'] = {
-	['Login'] = 'Webhook URL - Login',						-- เชื่อมต่อกับเซิร์ฟเวอร์
-	['Logout'] = 'Webhook URL - Logout',					-- ตัดการเชื่อมต่อเซิร์ฟเวอร์
-	['Chat'] = 'Webhook URL - Chat',						-- ข้อความแชท
-	['Dead'] = 'Webhook URL - Dead'							-- สาเหตุการเสียชีวิต
-}
+```js
+AZAEL.SERVER.CONFIG.Webhooks = {
+    'Login': 'Discord Webhook URL - Login',                 // เข้าสู่เซิร์ฟเวอร์
+    'Logout': 'Discord Webhook URL - Logout',               // ออกจากเซิร์ฟเวอร์
+    'Chat': 'Discord Webhook URL - Chat',                   // ข้อความแชท
+    'Dead': 'Discord Webhook URL - Dead'                    // สาเหตุการตาย
+};
 ```
 
 ##### หลังตั้งค่า Webhook
 
-```lua
-Config['webhook'] = {
-	['Login'] = 'Webhook URL - Login',						-- เชื่อมต่อกับเซิร์ฟเวอร์
-	['Logout'] = 'Webhook URL - Logout',					-- ตัดการเชื่อมต่อเซิร์ฟเวอร์
-	['Chat'] = 'Webhook URL - Chat',						-- ข้อความแชท
-    ['Dead'] = 'Webhook URL - Dead',						-- สาเหตุการเสียชีวิต
-    ['UseItem'] = 'Webhook URL - Use Item'	                -- ใช้งานไอเทม
-}
+```js
+AZAEL.SERVER.CONFIG.Webhooks = {
+    'Login': 'Discord Webhook URL - Login',                 // เข้าสู่เซิร์ฟเวอร์
+    'Logout': 'Discord Webhook URL - Logout',               // ออกจากเซิร์ฟเวอร์
+    'Chat': 'Discord Webhook URL - Chat',                   // ข้อความแชท
+    'Dead': 'Discord Webhook URL - Dead',                   // สาเหตุการตาย
+    'UseItem': 'Discord Webhook URL - Use Item'            // สาเหตุการตาย
+};
 ```
 
 {{% alert theme="info" %}}
@@ -100,26 +110,36 @@ Config['webhook'] = {
 
 ## การติดตั้งรหัสทริกเกอร์ฝั่ง Client
 
-การติดตั้งรหัสทริกเกอร์ (Trigger) เพื่อรับกิจกรรม (Event) จากทรัพยากรอื่นฝั่ง Client
+การติดตั้งรหัสทริกเกอร์ (Trigger) เพื่อรับเหตุการณ์ (Event) จากทรัพยากรอื่นฝั่ง Client
 
 ### รหัสทริกเกอร์ฝั่ง Client
+
+###### ภาษา Lua
+
 ```lua
 local sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord'
-TriggerServerEvent('azael_discordlogs:sendToDiscord', 'EventName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1')
+TriggerServerEvent('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1')
+```
+
+###### ภาษา JavaScript
+
+```js
+const sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord';
+emitNet('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1');
 ```
 
 ### รายละเอียดรหัสทริกเกอร์ฝั่ง Client
 
-* **azael_discordlogs:sendToDiscord**
-    - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [event_name](../config/#event_name) หากมีการแก้ไขการตั้งค่า
+* **azael_dc-serverlogs:sendToDiscord**
+    - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [Event](../config/#options) หากมีการแก้ไขการตั้งค่า
 * **EventName** 
-    - ชื่อของ [webhook](../config/#webhook)
+    - ชื่อของ [webhook](../config/#webhooks)
 * **sendToDiscord**
     - ข้อความที่ต้องการส่งไปยังกลุ่ม Discord
 * **GetPlayerServerId(PlayerId())**
     - ไอดีของผู้เล่นฝั่ง Client
 * **^1**
-    - รหัส [color](../config/#color) ของกล่องข้อความ
+    - รหัส [color](../config/#colors) ของกล่องข้อความ
 
 ### ตัวอย่างการเพิ่มรหัสทริกเกอร์ฝั่ง Client
 
@@ -141,7 +161,7 @@ end
 ```lua
 function ImpoundVehicle(vehicle)
     local sendToDiscord = '' .. GetPlayerName(PlayerId()) .. ' ส่ง พาหนะ ทะเบียน ' .. GetVehicleNumberPlateText(vehicle) .. ' ไปยังพาวท์'
-    TriggerServerEvent('azael_discordlogs:sendToDiscord', 'PoliceImpound', sendToDiscord, GetPlayerServerId(PlayerId()), '^5')
+    TriggerServerEvent('azael_dc-serverlogs:sendToDiscord', 'PoliceImpound', sendToDiscord, GetPlayerServerId(PlayerId()), '^5')
 
 	--local vehicleName = GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)))
 	ESX.Game.DeleteVehicle(vehicle)
@@ -152,29 +172,29 @@ end
 
 ### ตัวอย่างการตั้งค่า Webhook ฝั่ง Client
 
-ไปที่ `azael_dc-serverlogs/config.server.lua`
+ไปที่ `config/default/server.config.js`
 
 ##### ก่อนตั้งค่า Webhook
 
-```lua
-Config['webhook'] = {
-	['Login'] = 'Webhook URL - Login',						-- เชื่อมต่อกับเซิร์ฟเวอร์
-	['Logout'] = 'Webhook URL - Logout',					-- ตัดการเชื่อมต่อเซิร์ฟเวอร์
-	['Chat'] = 'Webhook URL - Chat',						-- ข้อความแชท
-	['Dead'] = 'Webhook URL - Dead'							-- สาเหตุการเสียชีวิต
-}
+```js
+AZAEL.SERVER.CONFIG.Webhooks = {
+    'Login': 'Discord Webhook URL - Login',                 // เข้าสู่เซิร์ฟเวอร์
+    'Logout': 'Discord Webhook URL - Logout',               // ออกจากเซิร์ฟเวอร์
+    'Chat': 'Discord Webhook URL - Chat',                   // ข้อความแชท
+    'Dead': 'Discord Webhook URL - Dead'                    // สาเหตุการตาย
+};
 ```
 
 ##### หลังตั้งค่า Webhook
 
-```lua
-Config['webhook'] = {
-	['Login'] = 'Webhook URL - Login',						-- เชื่อมต่อกับเซิร์ฟเวอร์
-	['Logout'] = 'Webhook URL - Logout',					-- ตัดการเชื่อมต่อเซิร์ฟเวอร์
-	['Chat'] = 'Webhook URL - Chat',						-- ข้อความแชท
-    ['Dead'] = 'Webhook URL - Dead',						-- สาเหตุการเสียชีวิต
-    ['PoliceImpound'] = 'Webhook URL - Police Impound'	    -- ตำรวจ: ส่งพาหนะไปพาวท์
-}
+```js
+AZAEL.SERVER.CONFIG.Webhooks = {
+    'Login': 'Discord Webhook URL - Login',                 // เข้าสู่เซิร์ฟเวอร์
+    'Logout': 'Discord Webhook URL - Logout',               // ออกจากเซิร์ฟเวอร์
+    'Chat': 'Discord Webhook URL - Chat',                   // ข้อความแชท
+    'Dead': 'Discord Webhook URL - Dead',                   // สาเหตุการตาย
+    'PoliceImpound': 'Discord Webhook URL - Police Impound' // ตำรวจ: ส่งพาหนะไปพาวท์
+};
 ```
 
 {{% alert theme="info" %}}
