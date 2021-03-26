@@ -64,6 +64,43 @@ AZAEL.SERVER.CONFIG.Options = {
 **true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน
 {{% /alert %}}
 
+### `Messages`
+
+ข้อความแชท
+
+```js
+AZAEL.SERVER.CONFIG.Messages = {
+    Blacklist: {
+        Enable: true
+    },
+
+    Remove: {
+        Enable: true
+    },
+
+    Kick: { 
+        Enable: true,
+        Reason: 'ใช้คำที่ไม่ได้รับอนุญาตในกล่องข้อความแชท'
+    },
+    
+    Word: [
+        'lynxmenu.com',
+        'lynxcollective.ltd',
+        'eulencheats.com',
+        'discord.gg'
+    ]
+};
+```
+
+- **Blacklist** = ไม่อนุญาต (คำที่ไม่อนุญาต)
+    - **Enable** = เปิดใช้งาน ตรวจสอบคำที่ไม่อนุญาต
+- **Remove** = ลบข้อความแชท
+    - **Enable** = เปิดใช้งาน ลบข้อความแชท หากมีคำที่ไม่อนุญาตออกจากช่องแแชทของผู้เล่นทุกคน
+- **Kick** = เตะออกจากเซิร์ฟเวอร์
+    - **Enable** = เปิดใช้งาน เตะผู้เล่นที่ใช้คำที่ไม่อนุญาตออกจากเซิร์ฟเวอร์
+    - **Reason** = เหตุผลในการเตะออกจากเซิร์ฟเวอร์
+- **Word** = คำที่ไม่อนุญาต
+
 ### `Colors`
 
 สีกล่องข้อความ
