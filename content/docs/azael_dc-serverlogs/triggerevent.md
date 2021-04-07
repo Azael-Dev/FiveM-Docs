@@ -15,21 +15,21 @@ description: >
 
 ```lua
 local sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord'
-TriggerEvent('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, source, '^1')
+TriggerEvent('azael_dc-serverlogs:sendToDiscord', 'WebhookName', sendToDiscord, source, '^1')
 ```
 
 ###### ภาษา JavaScript
 
 ```js
 const sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord';
-emit('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, source, '^1');
+emit('azael_dc-serverlogs:sendToDiscord', 'WebhookName', sendToDiscord, source, '^1');
 ```
 
 ### รายละเอียดรหัสทริกเกอร์ฝั่ง Server
 
 * **azael_dc-serverlogs:sendToDiscord**
     - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [Event](../config/#options) หากมีการแก้ไขการตั้งค่า
-* **EventName** 
+* **WebhookName** 
     - ชื่อของ [webhook](../config/#webhooks)
 * **sendToDiscord**
     - ข้อความที่ต้องการส่งไปยังกลุ่ม Discord
@@ -118,21 +118,21 @@ AZAEL.SERVER.CONFIG.Webhooks = {
 
 ```lua
 local sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord'
-TriggerServerEvent('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1')
+TriggerServerEvent('azael_dc-serverlogs:sendToDiscord', 'WebhookName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1')
 ```
 
 ###### ภาษา JavaScript
 
 ```js
 const sendToDiscord = 'ข้อความที่ต้องการส่งไปยัง Discord';
-emitNet('azael_dc-serverlogs:sendToDiscord', 'EventName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1');
+emitNet('azael_dc-serverlogs:sendToDiscord', 'WebhookName', sendToDiscord, GetPlayerServerId(PlayerId()), '^1');
 ```
 
 ### รายละเอียดรหัสทริกเกอร์ฝั่ง Client
 
 * **azael_dc-serverlogs:sendToDiscord**
     - ชื่อเหตุการณ์ทริกเกอร์ (Trigger) ให้ระบุตรงกับ [Event](../config/#options) หากมีการแก้ไขการตั้งค่า
-* **EventName** 
+* **WebhookName** 
     - ชื่อของ [webhook](../config/#webhooks)
 * **sendToDiscord**
     - ข้อความที่ต้องการส่งไปยังกลุ่ม Discord
