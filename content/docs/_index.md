@@ -84,6 +84,13 @@ Azael Documentation
         <li><a href="/docs/azael_give-objects/config">การตั้งค่าทรัพยากร</a></li>
       </ul>
     </div>
+    <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
+      <h4>azael_active-identifiers</h4>
+      <ul>
+        <li><a href="/docs/azael_active-identifiers/installation">การติดตั้งทรัพยากร</a></li>
+        <li><a href="/docs/azael_active-identifiers/config">การตั้งค่าทรัพยากร</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
