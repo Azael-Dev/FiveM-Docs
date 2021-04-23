@@ -35,6 +35,10 @@ AZAEL.SERVER.CONFIG.Options = {
         URL: 'https://i.imgur.com/GxQpZzJ.png'
     },
 
+    Request: {
+        Count: 10
+    },
+
     Limit: {
         Enable: true
     },
@@ -53,6 +57,8 @@ AZAEL.SERVER.CONFIG.Options = {
     - **Name** = ชื่อของเหตุการณ์ (เวอร์ชั่นเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
 - **Image** = รูปภาพ Webhook
     - **URL** = ที่อยู่ของรูปภาพ
+- **Request** = คำขอการใช้งาน [Discord API - Webhooks](https://discord.com/developers/docs/intro)
+    - **Count** = ระบุจำนวน Log ที่ต้องการส่งไปยังกลุ่ม Discord ต่อ 1 วินาที (แนะนำไม่เกิน 15 คำขอ เพื่อป้องกัน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits#rate-limits))
 - **Limit** = จำกัด
     - **Enable** = เปิดใช้งาน ไม่พยายามส่งข้อความอีกครั้ง หากเกินอัตราจำกัดการใช้งาน Webhook (เเนะนำให้เปิดใช้งาน)
 - **Screenshot** = ภาพหน้าจอ
