@@ -196,6 +196,41 @@ AZAEL.CLIENT.CONFIG.Character = {
 
 - **Model** = รายการ Ped Models ใช้ในการตรวจสอบความถูกต้อง สำหรับบันทึกภาพหน้าจอของผู้เล่นในขณะที่เข้าสู่เซิร์ฟเวอร์ (ระบุเป็น `String` หรือ `Hash` ได้)
 
+### `Deaths`
+
+เสียชีวิต
+
+```js
+AZAEL.CLIENT.CONFIG.Deaths = {
+    Log: {
+        Disable: true
+    },
+
+    Zone: [
+        /* Boxing - International Airport */
+        {
+            X: -1096.59,
+            Y: -3007.87,
+            Z: 13.94,
+            Radius: 170
+        }
+    ]
+};
+```
+
+- **Log** = บันทึก (Log)
+    - **Disable** = ปิดใช้งาน บันทึกเสียชีวิต (Log) ในพื้นที่ที่กำหนด
+- **Zone** = พื้นที่ (สามารถเพิ่มพื้นที่ได้)
+    - **{...}** = [Objects](https://www.w3schools.com/js/js_objects.asp)
+        - **X** = ตำแหน่ง X
+        - **Y** = ตำแหน่ง Y
+        - **Z** = ตำแหน่ง Z
+        - **Radius** = รัศมี
+
+{{% alert theme="info" %}}
+**true** เท่ากับ ปิดใช้งาน | **false** เท่ากับ เปิดใช้งาน
+{{% /alert %}}
+
 ### `Weapons`
 
 อาวุธ ใช้สำหรับสาเหตุการตาย
