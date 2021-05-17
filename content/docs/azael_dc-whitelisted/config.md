@@ -341,6 +341,16 @@ Config['queue_max_server_slots'] = 256
 
 - ระบุเฉพาะ **ตัวเลข** เท่านั้น
 
+### `queue_max_waiting`
+
+ระบุ จำนวน Queue สูงสุด สำหรับการรอเชื่อมต่อกับเซิร์ฟเวอร์
+
+```lua
+Config['queue_max_waiting'] = 100
+```
+
+- ปิดใช้งานให้ระบุ **0**
+
 ### `queue_timer_refresh_client`
 
 เวลาในการอัพเดท ข้อความ และ อิโมจิ (วินาที)
