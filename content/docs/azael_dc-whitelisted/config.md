@@ -343,7 +343,7 @@ Config['queue_max_server_slots'] = 256
 
 ### `queue_max_waiting`
 
-ระบุ จำนวน Queue สูงสุด สำหรับการรอเชื่อมต่อกับเซิร์ฟเวอร์
+จำนวน Queue สูงสุด สำหรับการรอเชื่อมต่อกับเซิร์ฟเวอร์
 
 ```lua
 Config['queue_max_waiting'] = 100
