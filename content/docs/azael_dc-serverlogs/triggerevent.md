@@ -105,7 +105,8 @@ AZAEL.SERVER.CONFIG.Webhooks = {
 ```
 
 {{% alert theme="info" %}}
-บรรทัดสุดท้ายจะต้องไม่มีเครื่องหมาย <kbd>,</kbd> เพราะอาจจะทำให้ทรัพยากรเกิดข้อผิดพลาดได้
+ไม่ต้องกำหนดค่าต่างๆในส่วนนี้ หากคุณไม่ได้ เปิดการใช้งาน Discord - Webhooks ในการตั้งค่า [Options](../config/#options)<br>
+บรรทัดสุดท้ายจะต้องไม่มีเครื่องหมาย <kbd>,</kbd> เพราะอาจจะทำให้เกิดข้อผิดพลาดได้
 {{% /alert %}}
 
 ## การติดตั้งรหัสทริกเกอร์ฝั่ง Client
@@ -198,5 +199,53 @@ AZAEL.SERVER.CONFIG.Webhooks = {
 ```
 
 {{% alert theme="info" %}}
-บรรทัดสุดท้ายจะต้องไม่มีเครื่องหมาย <kbd>,</kbd> เพราะอาจจะทำให้ทรัพยากรเกิดข้อผิดพลาดได้
+ไม่ต้องกำหนดค่าต่างๆในส่วนนี้ หากคุณไม่ได้ เปิดการใช้งาน Discord - Webhooks ในการตั้งค่า [Options](../config/#options)<br>
+บรรทัดสุดท้ายจะต้องไม่มีเครื่องหมาย <kbd>,</kbd> เพราะอาจจะทำให้เกิดข้อผิดพลาดได้
+{{% /alert %}}
+
+## การใช้งาน Custom - Webhooks
+การส่งข้อมูลบันทึกกิจกรรมต่างๆไปยังเซิร์ฟเวอร์ที่กำหนดเอง สามารถเปิดการใช้งาน Custom - Webhooks ในการตั้งค่า [Options](../config/#options)
+
+### ตัวอย่าง HTTP POST Request
+ข้อมูลจะถูกส่งออกในรูปแบบ [JSON](https://en.wikipedia.org/wiki/JSON) ดังตัวอย่างด้านล่างนี้
+
+```json
+{
+    "event": "Login",
+    "color": "#99CC00",
+    "content": "เข้าสู่เซิร์ฟเวอร์",
+    "screenshot": "https://media.discordapp.net/attachments/819858829884915753/845634322181914664/screenshot.jpg",
+    "timestamp": 1621685334,
+    "player": {
+       "id": 1,
+       "ip": "ip:192.168.1.101",
+       "license": "license:c89b466e4624e53d972f5dd188fa53c34689e653",
+       "discord": "discord:443334508020891658",
+       "steam": "steam:1100001332e7216",
+       "steam_name": "Azael Dev",
+       "steam_profile": "https://steamcommunity.com/profiles/76561198818947606",
+       "steam_avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/93/93178f63ab1be3720d78340a72ca518798ca6707_full.jpg"
+    }
+}
+```
+
+| Name                  | Possible Values        | Description              |
+|---------------------- |------------------------|--------------------------|
+| event                 | string                 | ชื่อของเหตุการณ์             |
+| color                 | string                 | รหัสสี                     |
+| content               | string                 | เนื้อหา                    |
+| screenshot            | string หรือ string ว่าง  | ภาพหน้าจอ                 |
+| timestamp             | number                 | วันและเวลา (unix)          |
+| player                | object                 | ข้อมูลรูปแบบวัตถุ             |
+| id                    | number                 | source                   |
+| ip                    | string                 | ip ที่ใช้งาน                |
+| license               | string                 | ตัวระบุ rockstar           |
+| discord               | string หรือ string ว่าง  | ตัวระบุ discord            |
+| steam                 | string                 | ตัวระบุ steam              |
+| steam_name            | string                 | ชื่อ steam                 |
+| steam_profile         | string                 | ลิงก์โปรไฟล์ steam          |
+| steam_avatar          | string                 | รูปโปรไฟล์ steam           |
+
+{{% alert theme="info" %}}
+สำหรับ API ในการรับข้อมูล และ Client ที่ใช้ในการตรวจสอบข้อมูล ยังอยู่ระหว่างการพัฒนา 
 {{% /alert %}}

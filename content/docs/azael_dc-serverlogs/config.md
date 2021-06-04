@@ -31,16 +31,34 @@ AZAEL.SERVER.CONFIG.Options = {
         Name: 'azael_dc-serverlogs:sendToDiscord',
     },
 
-    Image: {
-        URL: 'https://i.imgur.com/GxQpZzJ.png'
+    Discord: {
+        Enable: true,
+
+        Image: {
+            URL: 'https://i.imgur.com/GxQpZzJ.png'
+        },
+    
+        Request: {
+            Count: 10
+        },
+
+        Queue: {
+            Command: 'logq'
+        },
+    
+        Limit: {
+            Enable: false
+        }
     },
 
-    Request: {
-        Count: 10
-    },
+    Custom: {
+        Enable: false,
 
-    Limit: {
-        Enable: true
+        Host: { 
+            Name: 'localhost',
+            Path: '/api/logs/',
+            Port: 80
+        }
     },
 
     Screenshot: {
@@ -55,12 +73,22 @@ AZAEL.SERVER.CONFIG.Options = {
 
 - **Event** = เหตุการณ์
     - **Name** = ชื่อของเหตุการณ์ (เวอร์ชั่นเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
-- **Image** = รูปภาพ Webhook
-    - **URL** = ที่อยู่ของรูปภาพ
-- **Request** = คำขอการใช้งาน [Discord API - Webhooks](https://discord.com/developers/docs/intro)
-    - **Count** = ระบุจำนวน Log ที่ต้องการส่งไปยังกลุ่ม Discord ต่อ 1 วินาที (แนะนำไม่เกิน 15 คำขอ เพื่อป้องกัน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits#rate-limits))
-- **Limit** = จำกัด
-    - **Enable** = เปิดใช้งาน ไม่พยายามส่งข้อความอีกครั้ง หากเกินอัตราจำกัดการใช้งาน Webhook (เเนะนำให้เปิดใช้งาน)
+- **Discord** = Discord - Webhooks
+    - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Discord - Webhooks
+    - **Image** = ภาพประจำตัว
+        - **URL** = ที่อยู่รูปภาพ
+    - **Request** = คำขอการใช้งาน [Discord API](https://discord.com/developers/docs/intro)
+        - **Count** = จำนวน คำขอ Webhooks ที่ต้องการส่งไปยัง Discord ต่อ 1 วินาที (แนะนำไม่เกิน 15 คำขอ เพื่อป้องกัน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits#rate-limits))
+    - **Queue** = คิวคำขอ
+        - **Command** = คำสั่ง ตรวจสอบคิวคำขอ Webhooks ที่ยังรอดำเนินการส่งไปยัง Discord (สามารถใช้คำสั่งผ่าน Server Console หรือ Live Console ของระบบ txAdmin)
+    - **Limit** = จำกัด
+        - **Enable** = เปิดใช้งาน ไม่ส่งคำขอ Webhooks หากเกินอัตราจำกัดการใช้งาน [Discord API](https://discord.com/developers/docs/intro)
+- **Custom** = Custom - Webhooks
+    - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Custom - Webhooks
+    - **Host** = Host
+        - **Name** = ชื่อ Host หรือ Domain (IP Address หรือ example.com)
+        - **Path** = เส้นทางของแอปพลิเคชัน (/api/logs/index.php)
+        - **Port** = Port ที่ใช้งาน (HTTP: 80 | HTTPS: 443)
 - **Screenshot** = ภาพหน้าจอ
     - **Enable** = เปิดใช้งาน บันทึกภาพหน้าจอ (หากเปิดใช้งาน จำเป็นที่จะต้องติดตั้งทรัพยากร [screenshot-basic](https://github.com/citizenfx/screenshot-basic))
 - **Debug** = ข้อผิดพลาด
@@ -140,21 +168,20 @@ AZAEL.SERVER.CONFIG.Colors = {
 
 ```js
 AZAEL.SERVER.CONFIG.Screenshots = {
+    Discord: {
+        Webhook: 'Discord Webhook URL - Screenshots',
+    },
+
     Event: [
         'Login',                                            
         'Dead'
-    ],
-
-    Webhook: [
-        'Discord Webhook URL - 1',
-        'Discord Webhook URL - 2',
-        'Discord Webhook URL - 3'
     ]
 };
 ```
 
+- **Discord** = Discord
+    - **Webhook** = URL สำหรับ ฝากภาพหน้าจอ
 - **Event** = เหตุการณ์ที่อนุญาตให้ บันทึกภาพหน้าจอ
-- **Webhook** = Webhook อัพโหลดรูปภาพหน้าจอ (เพิ่มจำนวน Webhook ได้ ระบบจะจัดลำดับในการอัพโหลดรูป)
 
 {{% alert theme="info" %}}
 [วิธีการสร้าง Discord Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
@@ -174,6 +201,7 @@ AZAEL.SERVER.CONFIG.Webhooks = {
 ```
 
 {{% alert theme="info" %}}
+ไม่ต้องกำหนดค่าต่างๆในส่วนนี้ หากคุณไม่ได้ เปิดการใช้งาน Discord - Webhooks ในการตั้งค่า [Options](#options)<br>
 บรรทัดสุดท้ายจะต้องไม่มีเครื่องหมาย <kbd>,</kbd> เพราะอาจจะทำให้เกิดข้อผิดพลาดได้
 {{% /alert %}}
 
@@ -203,7 +231,7 @@ AZAEL.CLIENT.CONFIG.Character = {
 ```js
 AZAEL.CLIENT.CONFIG.Deaths = {
     Log: {
-        Disable: true
+        Disable: false
     },
 
     Zone: [
