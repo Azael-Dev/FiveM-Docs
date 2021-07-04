@@ -71,10 +71,10 @@ server_scripts
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-'@azael_give-objects/export/server/extended.server.lua'
+'@azael_give-objects/export/server/function.server.lua'
 ```
 
-![Export es_extended](/resources/azael_give-objects/export_es_extended.png "Export es_extended")
+![Export es_extended](/resources/azael_give-objects/fxmanifest/es_extended.png "Export es_extended")
 
 ### esx_inventoryhud
 
@@ -95,10 +95,10 @@ client_scripts
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-'@azael_give-objects/export/client/inventory.client.js'
+'@azael_give-objects/export/client/function.client.js'
 ```
 
-![Export esx_inventoryhud](/resources/azael_give-objects/export_esx_inventoryhud-client.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/fxmanifest/export_esx_inventoryhud_client.png "Export esx_inventoryhud")
 
 <br>
 
@@ -117,10 +117,10 @@ server_scripts
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-'@azael_give-objects/export/server/inventory.server.lua'
+'@azael_give-objects/export/server/function.server.lua'
 ```
 
-![Export esx_inventoryhud](/resources/azael_give-objects/export_esx_inventoryhud-server.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/fxmanifest/export_esx_inventoryhud_server.png "Export esx_inventoryhud")
 
 ### dpemotes
 
@@ -145,10 +145,10 @@ client_scripts
 เพิ่มรหัสนี้ไว้ด้านล่าง
 
 ```lua
-'@azael_give-objects/export/client/dpemotes.client.lua'
+'@azael_give-objects/export/client/function.client.lua'
 ```
 
-![Export esx_inventoryhud](/resources/azael_give-objects/export_dpemotes.png "Export esx_inventoryhud")
+![Export dpemotes](/resources/azael_give-objects/fxmanifest/export_dpemotes.png "Export dpemotes")
 
 ## การติดตั้งใน esx_inventoryhud
 
@@ -178,6 +178,8 @@ end
 หากคุณใช้งาน [azael_ui-acceptitems](https://fivem.azael.dev/digishop/azael-ui-acceptitems/) ให้วางรหัสนี้ไว้ด้านล่างเงื่อนไขของฟังก์ชัน [AZAEL.ACCEPT_ITEMS.GetPlayerRequest](../../azael_ui-acceptitems/installation/#esx_inventoryhudupdatekey)
 {{% /alert %}}
 
+![Trigger esx_inventoryhud](/resources/azael_give-objects/esx_inventoryhud/1.png "Trigger esx_inventoryhud")
+
 ### `item_key`
 
 ค้นหา
@@ -192,6 +194,7 @@ TriggerClientEvent("esx_inventoryhud:getOwnerVehicle", target)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, 'key', true)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, 'key', false)
 ```
+![Trigger esx_inventoryhud](/resources/azael_give-objects/esx_inventoryhud/2.png "Trigger esx_inventoryhud")
 
 ### `item_keyhouse`
 
@@ -207,6 +210,8 @@ TriggerClientEvent("esx_inventoryhud:getOwnerHouse", target)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, 'keyhouse', true)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, 'keyhouse', false)
 ```
+
+![Trigger esx_inventoryhud](/resources/azael_give-objects/esx_inventoryhud/3.png "Trigger esx_inventoryhud")
 
 ## การติดตั้งใน es_extended v1.1.x
 
@@ -236,6 +241,8 @@ end
 หากคุณใช้งาน [azael_ui-acceptitems](https://fivem.azael.dev/digishop/azael-ui-acceptitems/) ให้วางรหัสนี้ไว้ด้านล่างเงื่อนไขของฟังก์ชัน [AZAEL.ACCEPT_ITEMS.GetPlayerRequest](../../azael_ui-acceptitems/installation/#esxgiveinventoryitem)
 {{% /alert %}}
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/1.png "Trigger es_extended")
+
 ### `item_standard`
 
 ค้นหา
@@ -250,6 +257,8 @@ targetXPlayer.addInventoryItem   (itemName, itemCount)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, itemName, true)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/2.png "Trigger es_extended")
 
 ### `item_money`
 
@@ -266,6 +275,8 @@ TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source,
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/3.png "Trigger es_extended")
+
 ### `item_account`
 
 ค้นหา
@@ -281,6 +292,8 @@ TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source,
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/4.png "Trigger es_extended")
+
 ### `item_weapon`
 
 ค้นหา
@@ -295,6 +308,8 @@ targetXPlayer.addWeapon(itemName, itemCount)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, itemName, true)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/5.png "Trigger es_extended")
 
 ## `esx:removeInventoryItem`
 
@@ -312,6 +327,8 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(_source) then
 end
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/6.png "Trigger es_extended")
+
 ### `item_standard`
 
 ค้นหา
@@ -325,6 +342,8 @@ xPlayer.removeInventoryItem(itemName, itemCount)
 ```lua
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/7.png "Trigger es_extended")
 
 ### `item_money`
 
@@ -340,6 +359,8 @@ xPlayer.removeMoney(itemCount)
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/8.png "Trigger es_extended")
+
 ### `item_account`
 
 ค้นหา
@@ -354,6 +375,8 @@ xPlayer.removeAccountMoney(itemName, itemCount)
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/9.png "Trigger es_extended")
+
 ### `item_weapon`
 
 ค้นหา
@@ -367,6 +390,8 @@ xPlayer.removeWeapon(itemName)
 ```lua
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/10.png "Trigger es_extended")
 
 ## `esx:onPickup`
 
@@ -384,6 +409,8 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(xPlayer.source) then
 end
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/11.png "Trigger es_extended")
+
 ### `item_standard`
 
 ค้นหา
@@ -397,6 +424,8 @@ xPlayer.addInventoryItem(pickup.name, total)
 ```lua
 TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, pickup.name)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/12.png "Trigger es_extended")
 
 ### `item_money`
 
@@ -412,6 +441,8 @@ xPlayer.addMoney(pickup.count)
 TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, pickup.name)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/13.png "Trigger es_extended")
+
 ### `item_account`
 
 ค้นหา
@@ -426,7 +457,9 @@ xPlayer.addAccountMoney(pickup.name, pickup.count)
 TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, pickup.name)
 ```
 
-## การติดตั้งใน es_extended v1.2.x
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-1/14.png "Trigger es_extended")
+
+## การติดตั้งใน es_extended v1.2.x, v1-final, legacy
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.2.x` จะใช้ระบบ `weigh` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_give-objects` ตามขั้นตอนด้านล่างนี้
 
@@ -454,6 +487,8 @@ end
 หากคุณใช้งาน [azael_ui-acceptitems](https://fivem.azael.dev/digishop/azael-ui-acceptitems/) ให้วางรหัสนี้ไว้ด้านล่างเงื่อนไขของฟังก์ชัน [AZAEL.ACCEPT_ITEMS.GetPlayerRequest](../../azael_ui-acceptitems/installation/#esxgiveinventoryitem-1)
 {{% /alert %}}
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/1.png "Trigger es_extended")
+
 ### `item_standard`
 
 ค้นหา
@@ -468,6 +503,8 @@ targetXPlayer.addInventoryItem   (itemName, itemCount)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, itemName, true)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/2.png "Trigger es_extended")
 
 ### `item_account`
 
@@ -484,6 +521,8 @@ TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source,
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/3.png "Trigger es_extended")
+
 ### `item_weapon`
 
 ค้นหา
@@ -499,6 +538,8 @@ TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source,
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/4.png "Trigger es_extended")
+
 ### `item_ammo`
 
 ค้นหา
@@ -513,6 +554,8 @@ targetXPlayer.addWeaponAmmo(itemName, itemCount)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', sourceXPlayer.source, targetXPlayer.source, type, itemName, true)
 TriggerClientEvent('azael_give-objects:giveInventoryItem', targetXPlayer.source, sourceXPlayer.source, type, itemName, false)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/5.png "Trigger es_extended")
 
 ## `esx:removeInventoryItem`
 
@@ -530,6 +573,8 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(xPlayer.source) then
 end
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/6.png "Trigger es_extended")
+
 ### `item_standard`
 
 ค้นหา
@@ -543,6 +588,8 @@ xPlayer.removeInventoryItem(itemName, itemCount)
 ```lua
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/7.png "Trigger es_extended")
 
 ### `item_account`
 
@@ -558,6 +605,8 @@ xPlayer.removeAccountMoney(itemName, itemCount)
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/8.png "Trigger es_extended")
+
 ### `item_weapon`
 
 ค้นหา
@@ -571,6 +620,8 @@ xPlayer.removeWeapon(itemName)
 ```lua
 TriggerClientEvent('azael_give-objects:removeInventoryItem', xPlayer.source, type, itemName)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/9.png "Trigger es_extended")
 
 ## `esx:onPickup`
 
@@ -588,6 +639,8 @@ if not AZAEL.GIVE_OBJECTS.CanPlayAnimation(xPlayer.source) then
 end
 ```
 
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/10.png "Trigger es_extended")
+
 ### `success`
 
 ค้นหา
@@ -601,6 +654,8 @@ TriggerClientEvent('esx:removePickup', -1, pickupId)
 ```lua
 TriggerClientEvent('azael_give-objects:onPickup', xPlayer.source, pickup.type, pickup.name)
 ```
+
+![Trigger es_extended](/resources/azael_give-objects/es_extended/1-2/11.png "Trigger es_extended")
 
 ## ยกเลิกการใช้งาน
 
