@@ -34,7 +34,7 @@ server_scripts
 '@azael_ui-acceptitems/export/server/function.server.lua'
 ```
 
-![Export es_extended](/resources/azael_ui-acceptitems/export_es_extended.png "Export es_extended")
+![Export es_extended](/resources/azael_ui-acceptitems/fxmanifest/1.png "Export es_extended")
 
 ### esx_inventoryhud
 
@@ -58,7 +58,7 @@ server_scripts
 '@azael_ui-acceptitems/export/server/function.server.lua'
 ```
 
-![Export esx_inventoryhud](/resources/azael_ui-acceptitems/export_esx_inventoryhud.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_ui-acceptitems/fxmanifest/2.png "Export esx_inventoryhud")
 
 ## การติดตั้งใน esx_inventoryhud
 
@@ -94,6 +94,8 @@ end
 หากคุณใช้งาน [azael_give-objects](https://fivem.azael.dev/digishop/azael-give-objects/) ให้วางรหัสนี้ไว้ด้านบนของเงื่อนไข [AZAEL.GIVE_OBJECTS.CanPlayAnimation](../../azael_give-objects/installation/#esx_inventoryhudupdatekey)
 {{% /alert %}}
 
+![Trigger esx_inventoryhud](/resources/azael_ui-acceptitems/esx_inventoryhud/1.png "Trigger esx_inventoryhud")
+
 ## การติดตั้งใน es_extended v1.1.x
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.1.x` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_ui-acceptitems` ตามขั้นตอนด้านล่างนี้
@@ -128,7 +130,9 @@ end
 หากคุณใช้งาน [azael_give-objects](https://fivem.azael.dev/digishop/azael-give-objects/) ให้วางรหัสนี้ไว้ด้านบนของเงื่อนไข [AZAEL.GIVE_OBJECTS.CanPlayAnimation](../../azael_give-objects/installation/#esxgiveinventoryitem)
 {{% /alert %}}
 
-## การติดตั้งใน es_extended v1.2.x
+![Trigger es_extended](/resources/azael_ui-acceptitems/es_extended/1-1/1.png "Trigger es_extended")
+
+## การติดตั้งใน es_extended v1.2.x, v1-final, legacy
 
 [es_extended](https://github.com/esx-framework/es_extended) เวอร์ชั่น `v1.2.x` จะใช้ระบบ `weigh` จะใช้ระบบ `limit` หากเซิร์ฟเวอร์ของคุณใช้เวอร์ชั่นนี้อยู่ ให้คุณไปที่ `es_extended/server/main.lua` และดำเนินการติดตั้งรหัสทริกเกอร์ เพื่อส่งกิจกรรมมายังทรัพยากร `azael_ui-acceptitems` ตามขั้นตอนด้านล่างนี้
 
@@ -161,6 +165,8 @@ end
 {{% alert theme="info" %}}
 หากคุณใช้งาน [azael_give-objects](https://fivem.azael.dev/digishop/azael-give-objects/) ให้วางรหัสนี้ไว้ด้านบนของเงื่อนไข [AZAEL.GIVE_OBJECTS.CanPlayAnimation](../../azael_give-objects/installation/#esxgiveinventoryitem-1)
 {{% /alert %}}
+
+![Trigger es_extended](/resources/azael_ui-acceptitems/es_extended/1-2/1.png "Trigger es_extended")
 
 ## ยกเลิกการใช้งาน
 
