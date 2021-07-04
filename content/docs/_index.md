@@ -34,8 +34,8 @@ Azael Documentation
     <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
       <h4>azael_db-health&armor</h4>
       <ul>
-        <li><a href="/docs/azael-db-healandarmor/installation">การติดตั้งทรัพยากร</a></li>
-        <li><a href="/docs/azael-db-healandarmor/config">การตั้งค่าทรัพยากร</a></li>
+        <li><a href="/docs/azael_db-healandarmor/installation">การติดตั้งทรัพยากร</a></li>
+        <li><a href="/docs/azael_db-healandarmor/config">การตั้งค่าทรัพยากร</a></li>
       </ul>
     </div>
     <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
