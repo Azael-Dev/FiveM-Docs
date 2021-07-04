@@ -74,7 +74,7 @@ server_scripts
 '@azael_give-objects/export/server/function.server.lua'
 ```
 
-![Export es_extended](/resources/azael_give-objects/fxmanifest/es_extended.png "Export es_extended")
+![Export es_extended](/resources/azael_give-objects/fxmanifest/1.png "Export es_extended")
 
 ### esx_inventoryhud
 
@@ -98,7 +98,7 @@ client_scripts
 '@azael_give-objects/export/client/function.client.js'
 ```
 
-![Export esx_inventoryhud](/resources/azael_give-objects/fxmanifest/export_esx_inventoryhud_client.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/fxmanifest/2.png "Export esx_inventoryhud")
 
 <br>
 
@@ -120,7 +120,7 @@ server_scripts
 '@azael_give-objects/export/server/function.server.lua'
 ```
 
-![Export esx_inventoryhud](/resources/azael_give-objects/fxmanifest/export_esx_inventoryhud_server.png "Export esx_inventoryhud")
+![Export esx_inventoryhud](/resources/azael_give-objects/fxmanifest/3.png "Export esx_inventoryhud")
 
 ### dpemotes
 
@@ -148,7 +148,7 @@ client_scripts
 '@azael_give-objects/export/client/function.client.lua'
 ```
 
-![Export dpemotes](/resources/azael_give-objects/fxmanifest/export_dpemotes.png "Export dpemotes")
+![Export dpemotes](/resources/azael_give-objects/fxmanifest/4.png "Export dpemotes")
 
 ## การติดตั้งใน esx_inventoryhud
 
