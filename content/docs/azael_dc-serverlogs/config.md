@@ -28,7 +28,7 @@ AZAEL.SERVER.AUTH.CONFIG.Token = 'Token Key';
 ```js
 AZAEL.SERVER.CONFIG.Options = {
     Event: {
-        Name: 'azael_dc-serverlogs:sendToDiscord',
+        Name: 'azael_dc-serverlogs:sendToDiscord'
     },
 
     Discord: {
@@ -52,12 +52,21 @@ AZAEL.SERVER.CONFIG.Options = {
     },
 
     Custom: {
-        Enable: false,
+        Enable: false,  
+        Using: 'Localhost',
 
-        Host: { 
-            Name: 'localhost',
-            Path: '/api/logs/',
-            Port: 80
+        Localhost: {
+            Collection: {
+                Name: 'azael_logs'
+            }
+        },
+
+        HttpRequest: {
+            Host: {
+                Name: 'example.com',
+                Path: '/api/logs/',
+                Port: 80
+            }
         }
     },
 
@@ -72,7 +81,7 @@ AZAEL.SERVER.CONFIG.Options = {
 ```
 
 - **Event** = เหตุการณ์
-    - **Name** = ชื่อของเหตุการณ์ (เวอร์ชั่นเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
+    - **Name** = ชื่อของเหตุการณ์ (เวอร์ชันเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
 - **Discord** = Discord - Webhooks
     - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Discord - Webhooks
     - **Image** = ภาพประจำตัว
@@ -85,10 +94,15 @@ AZAEL.SERVER.CONFIG.Options = {
         - **Enable** = เปิดใช้งาน ไม่ส่งคำขอ Webhooks หากเกินอัตราจำกัดการใช้งาน [Discord API](https://discord.com/developers/docs/intro)
 - **Custom** = Custom - Webhooks
     - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Custom - Webhooks
-    - **Host** = Host
-        - **Name** = ชื่อ Host หรือ Domain (IP Address หรือ example.com)
-        - **Path** = เส้นทางของแอปพลิเคชัน (/api/logs/index.php)
-        - **Port** = Port ที่ใช้งาน (HTTP: 80 | HTTPS: 443)
+    - **Using** = ใช้งาน `Localhost` หรือ `HttpRequest` (Localhost เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ | HttpRequest ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์)
+    - **Localhost** = เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ (หากใช้งาน จำเป็นที่จะต้องติดตั้ง [MongoDB](https://www.mongodb.com/try/download/community) บนเครื่องเซิร์ฟเวอร์ และ ทรัพยากร [MongoDB](https://github.com/alcoholiclobster/fivem-mongodb) สำหรับ FiveM)
+        - **Collection** = MongoDB - Collection (Table)
+            - **Name** = ชื่อ Collection ที่ใช้ในการเก็บข้อมูล
+    - **HttpRequest** = ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์ (ใช้งาน POST และ ข้อมูลจะถูกส่งออกในรูปแบบ JSON)
+        - **Host** = โฮสที่ใช้สำหรับเก็บข้อมูล
+            - **Name** = ชื่อ Host หรือ Domain (IP Address หรือ example.com)
+            - **Path** = เส้นทางของแอปพลิเคชัน (/api/logs/index.php)
+            - **Port** = Port ที่ใช้งาน (HTTP: 80 | HTTPS: 443)
 - **Screenshot** = ภาพหน้าจอ
     - **Enable** = เปิดใช้งาน บันทึกภาพหน้าจอ (หากเปิดใช้งาน จำเป็นที่จะต้องติดตั้งทรัพยากร [screenshot-basic](https://github.com/citizenfx/screenshot-basic))
 - **Debug** = ข้อผิดพลาด
@@ -169,7 +183,7 @@ AZAEL.SERVER.CONFIG.Colors = {
 ```js
 AZAEL.SERVER.CONFIG.Screenshots = {
     Discord: {
-        Webhook: 'Discord Webhook URL - Screenshots',
+        Webhook: 'Discord Webhook URL - Screenshots'
     },
 
     Event: [
