@@ -56,6 +56,10 @@ AZAEL.SERVER.CONFIG.Options = {
         Using: 'Localhost',
 
         Localhost: {
+            Resource: {
+                Name: 'mongodb'
+            },
+            
             Collection: {
                 Name: 'azael_logs'
             }
@@ -96,6 +100,8 @@ AZAEL.SERVER.CONFIG.Options = {
     - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Custom - Webhooks
     - **Using** = ใช้งาน `Localhost` หรือ `HttpRequest` (Localhost เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ | HttpRequest ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์)
     - **Localhost** = เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ (หากใช้งาน จำเป็นที่จะต้องติดตั้ง [MongoDB](https://www.mongodb.com/try/download/community) บนเครื่องเซิร์ฟเวอร์ และ ทรัพยากร [MongoDB](https://github.com/alcoholiclobster/fivem-mongodb) สำหรับ FiveM)
+        - **Resource** = ทรัพยากร (Database)
+            - **Name** = ชื่อของ ทรัพยากร ที่ใช้งาน (รองรับ [MongoDB](https://github.com/alcoholiclobster/fivem-mongodb) เท่านั้น)
         - **Collection** = MongoDB - Collection (Table)
             - **Name** = ชื่อ Collection ที่ใช้ในการเก็บข้อมูล
     - **HttpRequest** = ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์ (ใช้งาน POST และ ข้อมูลจะถูกส่งออกในรูปแบบ JSON)
