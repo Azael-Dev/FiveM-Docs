@@ -39,7 +39,7 @@ AZAEL.SERVER.CONFIG.Options = {
         },
     
         Request: {
-            Count: 10
+            Count: 30
         },
 
         Queue: {
@@ -74,6 +74,10 @@ AZAEL.SERVER.CONFIG.Options = {
         }
     },
 
+    Hardware: {
+        Enable: true
+    },
+
     Screenshot: {
         Enable: true
     },
@@ -91,7 +95,7 @@ AZAEL.SERVER.CONFIG.Options = {
     - **Image** = ภาพประจำตัว
         - **URL** = ที่อยู่รูปภาพ
     - **Request** = คำขอการใช้งาน [Discord API](https://discord.com/developers/docs/intro)
-        - **Count** = จำนวน คำขอ Webhooks ที่ต้องการส่งไปยัง Discord ต่อ 1 วินาที (แนะนำไม่เกิน 15 คำขอ เพื่อป้องกัน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits#rate-limits))
+        - **Count** = จำนวน คำขอ Webhooks ที่ต้องการส่งไปยัง Discord ภายใน 1 นาที ต่อ 1 ช่อง (แนะนำไม่เกิน 30 คำขอ เพื่อป้องกัน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits#rate-limits))
     - **Queue** = คิวคำขอ
         - **Command** = คำสั่ง ตรวจสอบคิวคำขอ Webhooks ที่ยังรอดำเนินการส่งไปยัง Discord (สามารถใช้คำสั่งผ่าน Server Console หรือ Live Console ของระบบ txAdmin)
     - **Limit** = จำกัด
@@ -109,6 +113,8 @@ AZAEL.SERVER.CONFIG.Options = {
             - **Name** = ชื่อ Host หรือ Domain (IP Address หรือ example.com)
             - **Path** = เส้นทางของแอปพลิเคชัน (/api/logs/index.php)
             - **Port** = Port ที่ใช้งาน (HTTP: 80 | HTTPS: 443)
+- **Hardware** = Hardware - Tokens (แสดงข้อมูลที่ช่อง เข้าสู่เซิร์ฟเวอร์ หรือ Login ในรูปแบบ JSON Array)
+    - **Enable** = เปิดใช้งาน แสดงข้อมูล Hardware - Tokens ของผู้เล่น เมื่อเข้าสู่เซิร์ฟเวอร์            
 - **Screenshot** = ภาพหน้าจอ
     - **Enable** = เปิดใช้งาน บันทึกภาพหน้าจอ (หากเปิดใช้งาน จำเป็นที่จะต้องติดตั้งทรัพยากร [screenshot-basic](https://github.com/citizenfx/screenshot-basic))
 - **Debug** = ข้อผิดพลาด
