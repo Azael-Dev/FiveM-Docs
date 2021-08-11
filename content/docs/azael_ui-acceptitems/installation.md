@@ -60,41 +60,17 @@ server_scripts
 
 ![Export esx_inventoryhud](/resources/azael_ui-acceptitems/fxmanifest/2.png "Export esx_inventoryhud")
 
-## การติดตั้งใน esx_inventoryhud
+### gcphone
 
-{{% alert theme="info" %}}
-ไม่ต้องดำเนินการตามขั้นตอนนี้ หากคุณไม่ได้ใช้งานระบบส่ง กุญแจ ตามตัวอย่างรหัสด้านล่างนี้
-{{% /alert %}}
+ไปที่ `gcphone/__resource.lua` หรือ `gcphone/fxmanifest.lua`
 
-ไปที่ `esx_inventoryhud/server/main.lua`
-
-### `esx_inventoryhud:updateKey`
-
-ค้นหา
+เพิ่มรหัสนี้ไว้ภายในไฟล์ (บรรทัดสุดท้าย)
 
 ```lua
-local targetXPlayer = ESX.GetPlayerFromId(target)
+export 'GetPhoneNuiStatus'	-- Resource: azael_ui-acceptitems
 ```
 
-เพิ่มรหัสนี้ไว้ด้านล่าง
-
-```lua
-local xPlayerRequest = AZAEL.ACCEPT_ITEMS.GetPlayerRequest(sourceXPlayer.source, targetXPlayer.source, type, itemName, 1)
-
-if xPlayerRequest.resend then
-	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, '~r~Cannot~s~ give, please try ~y~again~s~')
-elseif xPlayerRequest.display then
-	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'The person is in ~y~another deal~s~')
-elseif xPlayerRequest.cancel then
-	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'The deal has been ~r~rejected~s~')
-end
-```
-
-{{% alert theme="info" %}}
-หากคุณใช้งาน [azael_give-objects](https://fivem.azael.dev/digishop/azael-give-objects/) ให้วางรหัสนี้ไว้ด้านบนของเงื่อนไข [AZAEL.GIVE_OBJECTS.CanPlayAnimation](../../azael_give-objects/installation/#esx_inventoryhudupdatekey)
-{{% /alert %}}
-
-![Trigger esx_inventoryhud](/resources/azael_ui-acceptitems/esx_inventoryhud/1.png "Trigger esx_inventoryhud")
+![Export gcphone](/resources/azael_ui-acceptitems/gcphone/1.png "Export gcphone")
 
 ## การติดตั้งใน es_extended v1.1.x
 
@@ -167,6 +143,60 @@ end
 {{% /alert %}}
 
 ![Trigger es_extended](/resources/azael_ui-acceptitems/es_extended/1-2/1.png "Trigger es_extended")
+
+## การติดตั้งใน esx_inventoryhud
+
+{{% alert theme="info" %}}
+ไม่ต้องดำเนินการตามขั้นตอนนี้ หากคุณไม่ได้ใช้งานระบบส่ง กุญแจ ตามตัวอย่างรหัสด้านล่างนี้
+{{% /alert %}}
+
+ไปที่ `esx_inventoryhud/server/main.lua`
+
+### `esx_inventoryhud:updateKey`
+
+ค้นหา
+
+```lua
+local targetXPlayer = ESX.GetPlayerFromId(target)
+```
+
+เพิ่มรหัสนี้ไว้ด้านล่าง
+
+```lua
+local xPlayerRequest = AZAEL.ACCEPT_ITEMS.GetPlayerRequest(sourceXPlayer.source, targetXPlayer.source, type, itemName, 1)
+
+if xPlayerRequest.resend then
+	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, '~r~Cannot~s~ give, please try ~y~again~s~')
+elseif xPlayerRequest.display then
+	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'The person is in ~y~another deal~s~')
+elseif xPlayerRequest.cancel then
+	return TriggerClientEvent('esx:showNotification', sourceXPlayer.source, 'The deal has been ~r~rejected~s~')
+end
+```
+
+{{% alert theme="info" %}}
+หากคุณใช้งาน [azael_give-objects](https://fivem.azael.dev/digishop/azael-give-objects/) ให้วางรหัสนี้ไว้ด้านบนของเงื่อนไข [AZAEL.GIVE_OBJECTS.CanPlayAnimation](../../azael_give-objects/installation/#esx_inventoryhudupdatekey)
+{{% /alert %}}
+
+![Trigger esx_inventoryhud](/resources/azael_ui-acceptitems/esx_inventoryhud/1.png "Trigger esx_inventoryhud")
+
+## การติดตั้งใน gcphone
+
+ไปที่ `gcphone/client/client.lua`
+
+เพิ่มรหัสนี้ไว้ภายในไฟล์ (บรรทัดสุดท้าย)
+
+```lua
+function GetPhoneNuiStatus(status) -- Resource: azael_ui-acceptitems
+  if menuIsOpen or hasFocus then
+    return status(true)
+  end
+
+  status(false)
+end
+```
+
+![Function gcphone](/resources/azael_ui-acceptitems/gcphone/2.png "Function gcphone")
 
 ## ยกเลิกการใช้งาน
 
