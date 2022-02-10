@@ -172,7 +172,8 @@ Config['object'] = {
 	['scuba'] = {										    -- Prop ชุดดำน้ำลึก
 		['enable'] = true,								    -- เปิดใช้งาน Prop ชุดดำน้ำลึก
 		['mask'] = 'p_michael_scuba_mask_s',			    -- ชื่อ หน้ากาก (Object Name)
-		['tank'] = 'p_michael_scuba_tank_s'				    -- ชื่อ ถังออกซิเจน (Object Name)
+		['tank'] = 'p_michael_scuba_tank_s',				-- ชื่อ ถังออกซิเจน (Object Name)
+		['light'] = true									-- เปิดใช้งาน ไฟฉาย ชุดดำน้ำลึก หรือไม่?
 	},
 	['snorkelling'] = {									    -- Prop ชุดดำน้ำตื้น
 		['enable'] = true,								    -- เปิดใช้งาน Prop ชุดดำน้ำตื้น
