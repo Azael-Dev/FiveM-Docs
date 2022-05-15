@@ -271,8 +271,9 @@ Config['skin_color_scuba_agencies'] = {
 Skin ชุดดำน้ำลึก และ ชุดดำน้ำตื้น
 
 ```lua
-Config['skin']= {
+Config['skin'] = {
 	['scuba'] = {										    -- Skin ชุดดำน้ำลึก (Scuba)
+		['enable'] = true,								    -- เปิดใช้งาน Skin ชุดดำน้ำลึก หรือไม่? (true เท่ากับ ใช้งาน | false เท่ากับ ไม่ใช้งาน)
 		['male'] = {									    -- Skin ผู้ชาย
 			['hair_1'] = 0,			['hair_2'] = 0,
 			['hair_color_1'] = 0,	['hair_color_2'] = 0,
@@ -311,6 +312,7 @@ Config['skin']= {
 	},
 
 	['snorkelling'] = {									    -- Skin ชุดดำน้ำตื้น (Snorkelling)
+		['enable'] = true,								  	-- เปิดใช้งาน Skin ชุดดำน้ำตื้น หรือไม่? (true เท่ากับ ใช้งาน | false เท่ากับ ไม่ใช้งาน)
 		['male'] = {									    -- Skin ผู้ชาย
 			['hair_1'] = 0,			['hair_2'] = 0,
 			['hair_color_1'] = 0,	['hair_color_2'] = 0,
@@ -350,19 +352,18 @@ Config['skin']= {
 }
 ```
 
-### `pNotify`
+### `notification`
 
-การเเจ้งเตือน pNotify สำหรับ ชุดดำน้ำลึก และ ชุดดำน้ำตื้น
+การเเจ้งเตือน สำหรับ ชุดดำน้ำลึก และ ชุดดำน้ำตื้น
 
 ```lua
-Config['pNotify'] = {									    -- การแจ้งเตือน pNotify
-	['enable'] = false,									    -- เปิดใช้งาน
-	['type'] = 'error',									    -- ประเภท (alert, success, error, warning, info)
-	['timeout'] = 3000,									    -- เวลาที่เเสดง (1000 เท่ากับ 1 วินาที)
-	['layout'] = 'bottomCenter',						    -- ตำแหน่งที่แสดง (top, topLeft, topCenter, topRight, center, cenerLeft, centerRight, bottom, bottomLeft, bottomCenter, bottomRight)
-	['queue'] = 'global'								    -- ชื่อคิว (ตั้งค่าเป็น "global" โดยค่าเริ่มต้น)
-}
+Config['notification'] = function(text)
+	TriggerEvent('pNotify:SendNotification', {				-- pNotify
+		text = text,
+		type = 'error',
+		timeout = 3000,
+		layout = 'bottomCenter',
+		queue = 'global'
+	})
+end
 ```
-
-* **true** = เปิดใช้งาน
-* **false** = ปิดใช้งาน
