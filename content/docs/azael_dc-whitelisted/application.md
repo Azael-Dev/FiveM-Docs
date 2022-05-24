@@ -9,10 +9,10 @@ description: >
 
 1. เปิดแอปพลิเคชัน Discord บน Desktop
 2. ไปที่ ตั้งค่า สัญลักษณ์ <i class="fas fa-cog"></i>
-3. เลือกเมนู หน้าตา เลื่อนลงไปด้านล่างจะพบหมวดหมู ขั้นสูง
+3. เลือกเมนู ขั้นสูง
 4. ดำเนินการ เปิดใช้โหมดผู้พัฒนา
 
-![Enable discord developer mode](/resources/azael_dc-whitelisted/enable-discord-developer-mode.gif "Enable discord developer mode")
+<!-- ![Enable discord developer mode](/resources/azael_dc-whitelisted/enable-discord-developer-mode.gif "Enable discord developer mode") -->
 
 ### สร้างแอปพลิเคชัน (Bot)
 
