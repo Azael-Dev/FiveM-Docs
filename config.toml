@@ -27,8 +27,8 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
 disableHomeIcon = true
-#editURL = "https://github.com/Azael-Dev/azael-fivem-docs/edit/master/content/"
-#github_repo = "https://github.com/Azael-Dev/azael-fivem-docs"
+editURL = "https://github.com/Azael-Dev/azael-fivem-docs/edit/master/content"
+github_repo = "https://github.com/Azael-Dev/azael-fivem-docs"
 #github_project_repo = "https://github.com/Azael-Dev/azael-fivem-docs"
 offlineSearch = true
 
