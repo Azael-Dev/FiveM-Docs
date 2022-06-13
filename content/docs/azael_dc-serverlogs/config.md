@@ -41,13 +41,24 @@ AZAEL.SERVER.CONFIG.Options = {
         Request: {
             Count: 30
         },
-
-        Queue: {
-            Command: 'logq'
-        },
     
         Limit: {
             Enable: false
+        },
+
+        Command: {
+            Queue: 'logq',
+            Save: 'logsave'
+        },
+
+        Scheduled: {
+            Event: {
+                Name: 'txAdmin:events:scheduledRestart',
+            },
+
+            Restart: {
+                Timer: 60
+            }
         }
     },
 
@@ -96,10 +107,16 @@ AZAEL.SERVER.CONFIG.Options = {
         - **URL** = ที่อยู่รูปภาพ
     - **Request** = คำขอการใช้งาน [Discord API](https://discord.com/developers/docs/intro)
         - **Count** = จำนวน คำขอ Webhooks ที่ต้องการส่งไปยัง Discord ภายใน 1 นาที ต่อ 1 ช่อง (แนะนำไม่เกิน 30 คำขอ เพื่อป้องกัน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits#rate-limits))
-    - **Queue** = คิวคำขอ
-        - **Command** = คำสั่ง ตรวจสอบคิวคำขอ Webhooks ที่ยังรอดำเนินการส่งไปยัง Discord (สามารถใช้คำสั่งผ่าน Server Console หรือ Live Console ของระบบ txAdmin)
     - **Limit** = จำกัด
         - **Enable** = เปิดใช้งาน ไม่ส่งคำขอ Webhooks หากเกินอัตราจำกัดการใช้งาน [Discord API](https://discord.com/developers/docs/intro)
+    - **Command** = คำสั่ง (สามารถใช้คำสั่งผ่าน Server Console หรือ Live Console ของระบบ [txAdmin](https://txadm.in/))
+        - **Queue** = ตรวจสอบคิวที่ยังรอดำเนินการส่งคำขอไปยัง Discord (Webhook)
+        - **Save** = บันทึกข้อมูลทั้งหมดเป็นรูปแบบไฟล์ (ในกรณียังมีคิวส่งคำขออยู่และผู้ดูแลต้องการรีสตาร์ทเซิร์ฟเวอร์ ระบบจะบันทึกข้อมูลทั้งหมดไปยังโฟลเดอร์ `azael_data/azael_dc-serverlogs/logs`)
+    - **Scheduled** = กำหนดการ (ในกรณียังมีคิวส่งคำขออยู่และเซิร์ฟเวอร์กำลังจะรีสตาร์ท ระบบจะบันทึกข้อมูลทั้งหมดไปยังโฟลเดอร์ `azael_data/azael_dc-serverlogs/logs`)
+        - **Event** = เหตุการณ์
+            - **Name** = เหตุการณ์ ชื่อ (รีสตาร์ทเซิร์ฟเวอร์โดยอัตโนมัติของระบบ [txAdmin](https://txadm.in/))
+        - **Restart** = รีสตาร์ท
+            - **Timer** = เวลา เพื่อดำเนินการบันทึกข้อมูล ก่อนเซิร์ฟเวอร์รีสตาร์ท (วินาที)
 - **Custom** = Custom - Webhooks
     - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Custom - Webhooks
     - **Using** = ใช้งาน `Localhost` หรือ `HttpRequest` (Localhost เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ | HttpRequest ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์)
@@ -190,7 +207,7 @@ AZAEL.SERVER.CONFIG.Colors = {
 
 ### `Screenshots`
 
-เหตุการณ์ที่กำหนดให้ บันทึกภาพหน้าจอ และ อัพโหลดไปยัง [Discord - Webhooks](https://support.discord.com/hc/th/articles/228383668-Intro-to-Webhooks) (Logout หรือ ออกจากเซิร์ฟเวอร์ ไม่สามารถใช้งานได้)
+เหตุการณ์ที่กำหนดให้ บันทึกภาพหน้าจอ และ อัพโหลดไปยัง [Discord - Webhooks](https://support.discord.com/hc/th/articles/228383668-Intro-to-Webhooks) (`Login` และ `Logout` ไม่สามารถใช้งานได้)
 
 ```js
 AZAEL.SERVER.CONFIG.Screenshots = {
@@ -198,17 +215,13 @@ AZAEL.SERVER.CONFIG.Screenshots = {
 };
 ```
 
-- **Discord** = Discord
-    - **Webhook** = URL สำหรับ ฝากภาพหน้าจอ
-- **Event** = เหตุการณ์ที่อนุญาตให้ บันทึกภาพหน้าจอ
-
 {{% alert theme="info" %}}
-[วิธีการสร้าง Discord Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
+สามารถเพิ่มเหตุการณ์ได้ โดยอ้างอิงจากเหตุการณ์ในการกำหนดค่า [Events](#events)
 {{% /alert %}}
 
 ### `Events`
 
-เหตุการณ์ทั้งหมด
+เหตุการณ์ทั้งหมด ([ขั้นตอนการสร้าง Discord Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks))
 
 ```js
 AZAEL.SERVER.CONFIG.Events = {
@@ -220,28 +233,12 @@ AZAEL.SERVER.CONFIG.Events = {
 ```
 
 {{% alert theme="info" %}}
-ไม่ต้องกำหนดค่าต่างๆในส่วนนี้ หากคุณไม่ได้ เปิดการใช้งาน Discord - Webhooks ในการตั้งค่า [Options](#options)<br>
-บรรทัดสุดท้ายจะต้องไม่มีเครื่องหมาย <kbd>,</kbd> เพราะอาจจะทำให้เกิดข้อผิดพลาดได้
+ไม่ต้องกำหนดค่าต่างๆในส่วนนี้ หากคุณไม่ได้ เปิดการใช้งาน Discord - Webhooks ในการตั้งค่า [Options](#options)
 {{% /alert %}}
 
 ## การตั้งค่าฝั่ง Client
 
 สามารถตั้งค่าได้ที่ไฟล์ `config/default/client.config.js`
-
-### `Character`
-
-ตัวละคร
-
-```js
-AZAEL.CLIENT.CONFIG.Character = {
-    Model: [
-        'mp_m_freemode_01',
-        'mp_f_freemode_01'
-    ]
-};
-```
-
-- **Model** = รายการ Ped Models ใช้ในการตรวจสอบความถูกต้อง สำหรับบันทึกภาพหน้าจอของผู้เล่นในขณะที่เข้าสู่เซิร์ฟเวอร์ (ระบุเป็น `String` หรือ `Hash` ได้)
 
 ### `Deaths`
 
