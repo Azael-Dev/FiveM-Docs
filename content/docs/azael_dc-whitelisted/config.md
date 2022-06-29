@@ -52,7 +52,7 @@ Config['identifier_license'] = false
 ```
 
 {{% alert theme="info" %}}
-**true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน (ไม่แนะนำให้ใช้งาน R* License)
+**true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน (ไม่แนะนำให้ใช้งาน R* License เนื่องจากเป็นตัวระบุผลิตภัณฑ์เกมประจำเครื่อง)
 {{% /alert %}}
 
 ### `discord_api_auto`
@@ -451,6 +451,26 @@ Config['server_launcher'] = {
 	['connected'] = function(identifier)
 		return exports['resource_name']:GetPlayerConnection(identifier)	-- ฟังก์ชันของทรัพยากร Launcher เพื่อใช้ในการตรวจสอบ
 	end
+}
+```
+
+{{% alert theme="info" %}}
+**true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน
+{{% /alert %}}
+
+### `adaptive_cards`
+
+[Adaptive Cards](https://adaptivecards.io/) แสดงข้อมูลของผู้เล่นในขณะเชื่อมต่อกับเซิร์ฟเวอร์
+
+```lua
+Config['adaptive_cards'] = {								-- FiveM Adaptive Cards in Deferrals
+	['enable'] = true,										-- เปิดใช้งาน Adaptive Cards เพื่อแสดงข้อมูลของผู้เล่นในขณะเชื่อมต่อกับเซิร์ฟเวอร์ (true เท่ากับ เปิดใช้งาน | false เท่ากับ ปิดใช้งาน)
+	['disconnect'] = false,									-- หากผู้เล่นไม่คลิกที่ปุ่ม ยืนยันการเชื่อมต่อ ตามเวลาที่กำหนดในการตั้งค่า ['timeout'] ระบบจะตัดการเชื่อมต่อของผู้เล่นโดยทันที หากปิดใช้งาน การเชื่อมต่อจะเริ่มต้นโดยอัตโนมัติหากหมดเวลา (true เท่ากับ เปิดใช้งาน | false เท่ากับ ปิดใช้งาน)
+	['timeout'] = 10,										-- เวลาในการแสดงข้อมูลของผู้เล่น หากหมดเวลา ระบบจะดำเนินการตามการตั้งค่า ['disconnect'] (วินาที)
+
+	['card'] = {											-- ห้ามแก้ไขการตั้งค่าในส่วนนี้โดยเด็ดขาด หากคุณไม่เข้าใจว่าสิ่งนี้คืออะไร เพราะอาจจะทำให้ทรัพยากรเกิดข้อผิดพลาดได้ (Adaptive Cards: https://adaptivecards.io)
+		...
+	}
 }
 ```
 
