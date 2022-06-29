@@ -40,6 +40,10 @@ AZAEL.SERVER.CONFIG.Options = {
         Target: {
             Reason: 'บุคคลอื่นกำลังใช้งานตัวระบุ {0} เชื่อมต่อกับเซิร์ฟเวอร์อยู่ในขณะนี้'
         },
+
+        Identifier: {
+            Reason: 'ไม่พบตัวระบุ {0} โปรดลองเชื่อมต่อกับเซิร์ฟเวอร์ใหม่อีกครั้ง'
+        }
     }
 };
 ```
@@ -51,6 +55,8 @@ AZAEL.SERVER.CONFIG.Options = {
         - **Enable** = เปิดใช้งาน เตะผู้เล่นออกจากเซิร์ฟเวอร์ หากมีบุคคลอื่นใช้ตัวระบุเดียวกันเชื่อมต่อ
         - **Reason** = เหตุผลในการเตะออกจากเซิร์ฟเวอร์
     - **Target** = ผู้เล่นที่พยายามเชื่อมต่อกับเซิร์ฟเวอร์
+        - **Reason** = เหตุผลในการเตะออกจากเซิร์ฟเวอร์
+    - **Identifier** = ไม่พบตัวระบุของผู้เล่น
         - **Reason** = เหตุผลในการเตะออกจากเซิร์ฟเวอร์
 
 {{% alert theme="info" %}}
@@ -82,4 +88,4 @@ AZAEL.SERVER.CONFIG.Logs = {
 - **Event** = เหตุการณ์
     - **Name** = ชื่อของเหตุการณ์ (เวอร์ชันเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
 - **Webhook** = Webhook
-    - **Name** = ชื่อของ Webhook ที่กำหนดไว้ใน [การตั้งค่า Webhook](../../azael_dc-serverlogs/config/#webhooks) ของทรัพยากร [azael_dc-serverlogs](https://fivem.azael.dev/digishop/azael-dc-serverlogs/)
+    - **Name** = ชื่อของ Webhook ที่กำหนดไว้ใน [การตั้งค่า Events](../../azael_dc-serverlogs/config/#events) ของทรัพยากร [azael_dc-serverlogs](https://fivem.azael.dev/digishop/azael-dc-serverlogs/)
