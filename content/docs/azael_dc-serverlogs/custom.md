@@ -29,11 +29,21 @@ ensure mongodb
 6. เลือก **Open PowerShell window here** เพื่อเปิดใช้งาน **PowerShell**
 7. ใช้คำสั่ง `npm install` เพื่อติดตั้ง **node_modules**
 
-## ใช้งาน HttpRequest
+## ใช้งาน HTTP Request
 ส่งข้อมูลบันทึกกิจกรรมต่างๆไปยังเซิร์ฟเวอร์ที่กำหนดเอง สามารถเปิดการใช้งาน **Custom - Logs** ในการตั้งค่า [Options](../config/#options) และกำหนด **Using** เป็น **HttpRequest**
 
-### ตัวอย่าง HTTP POST Request
-ข้อมูลจะถูกส่งออกในรูปแบบ [JSON](https://en.wikipedia.org/wiki/JSON) ดังตัวอย่างด้านล่างนี้ (HTTP Response Code จะต้องตอบกลับสถานะ `201` หรือ `200` ตาม[ตัวอย่าง API รับข้อมูล (PHP)](../custom/#ตวอยาง-api-รบขอมล-php))
+### ตัวอย่าง HTTP Request (POST)
+ข้อมูลจะถูกส่งออกโดยใช้ [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) และ **HTTP Response Code** จะต้องตอบกลับสถานะ `201` หรือ `200` ตาม[ตัวอย่าง API รับข้อมูล (PHP)](../custom/#ตวอยาง-api-รบขอมล-php)
+
+##### Request Header
+**Authorization** จะถูกกำหนดภายในส่วนหัวของคำขอ HTTP Request ตามกำหนดค่า [Options](../config/#options)
+
+```
+Authorization = <method> <parameter>
+```
+
+##### Request Body (JSON)
+ข้อมูลจะถูกส่งออกในรูปแบบ [JSON](https://en.wikipedia.org/wiki/JSON) ดังตัวอย่างด้านล่างนี้
 
 ```json
 {
