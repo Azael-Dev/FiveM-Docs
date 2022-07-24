@@ -74,7 +74,7 @@ AZAEL.SERVER.CONFIG.Logs = {
     },
 
     Event: {
-        Name: 'azael_dc-serverlogs:sendToDiscord'
+        Name: 'azael_dc-serverlogs:insertData'
     },
 
     Webhook: {
@@ -86,6 +86,6 @@ AZAEL.SERVER.CONFIG.Logs = {
 - **Send** = ส่งบันทึก
     - **Enable** = เปิดใช้งาน ส่งบันทึก
 - **Event** = เหตุการณ์
-    - **Name** = ชื่อของเหตุการณ์ (เวอร์ชันเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
+    - **Name** = ชื่อของเหตุการณ์ (ชื่อเหตุการณ์เก่า `azael_discordlogs:sendToDiscord` หรือ `azael_dc-serverlogs:sendToDiscord`)
 - **Webhook** = Webhook
     - **Name** = ชื่อของ Webhook ที่กำหนดไว้ใน [การตั้งค่า Events](../../azael_dc-serverlogs/config/#events) ของทรัพยากร [azael_dc-serverlogs](https://fivem.azael.dev/digishop/azael-dc-serverlogs/)
