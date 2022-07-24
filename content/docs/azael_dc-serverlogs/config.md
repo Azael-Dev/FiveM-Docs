@@ -28,7 +28,7 @@ AZAEL.SERVER.AUTH.CONFIG.Token = 'Token Key';
 ```js
 AZAEL.SERVER.CONFIG.Options = {
     Event: {
-        Name: 'azael_dc-serverlogs:sendToDiscord'
+        Name: 'azael_dc-serverlogs:insertData'
     },
 
     Discord: {
@@ -59,6 +59,12 @@ AZAEL.SERVER.CONFIG.Options = {
             Restart: {
                 Timer: 60
             }
+        },
+
+        Shutting: {
+            Event: {
+                Name: 'txAdmin:events:serverShuttingDown',
+            }
         }
     },
 
@@ -81,6 +87,11 @@ AZAEL.SERVER.CONFIG.Options = {
                 Name: 'example.com',
                 Path: '/api/logs/',
                 Port: 80
+            },
+
+            Authorization: {
+                Method: 'Log',
+                Token: 'your_token'
             }
         }
     },
@@ -100,7 +111,7 @@ AZAEL.SERVER.CONFIG.Options = {
 ```
 
 - **Event** = เหตุการณ์
-    - **Name** = ชื่อของเหตุการณ์ (เวอร์ชันเก่าจะใช้ `azael_discordlogs:sendToDiscord`)
+    - **Name** = ชื่อ (ชื่อเหตุการณ์เก่า `azael_discordlogs:sendToDiscord` หรือ `azael_dc-serverlogs:sendToDiscord`)
 - **Discord** = Discord - Webhooks
     - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Discord - Webhooks
     - **Image** = ภาพประจำตัว
@@ -114,12 +125,15 @@ AZAEL.SERVER.CONFIG.Options = {
         - **Save** = บันทึกข้อมูลทั้งหมดเป็นรูปแบบไฟล์ (ในกรณียังมีคิวส่งคำขออยู่และผู้ดูแลต้องการรีสตาร์ทเซิร์ฟเวอร์ ระบบจะบันทึกข้อมูลทั้งหมดไปยังโฟลเดอร์ `azael_data/azael_dc-serverlogs/logs`)
     - **Scheduled** = กำหนดการ (ในกรณียังมีคิวส่งคำขออยู่และเซิร์ฟเวอร์กำลังจะรีสตาร์ท ระบบจะบันทึกข้อมูลทั้งหมดไปยังโฟลเดอร์ `azael_data/azael_dc-serverlogs/logs`)
         - **Event** = เหตุการณ์
-            - **Name** = เหตุการณ์ ชื่อ (รีสตาร์ทเซิร์ฟเวอร์โดยอัตโนมัติของระบบ [txAdmin](https://txadm.in/))
+            - **Name** = ชื่อ (รีสตาร์ทเซิร์ฟเวอร์อัตโนมัติโดย [txAdmin](https://txadm.in/) เวอร์ชัน **3.2** ขึ้นไป)
         - **Restart** = รีสตาร์ท
             - **Timer** = เวลา เพื่อดำเนินการบันทึกข้อมูล ก่อนเซิร์ฟเวอร์รีสตาร์ท (วินาที)
-- **Custom** = Custom - Webhooks
-    - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Custom - Webhooks
-    - **Using** = ใช้งาน `Localhost` หรือ `HttpRequest` (Localhost เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ | HttpRequest ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์)
+    - **Shutting** = กำลังปิด (ในกรณียังมีคิวส่งคำขออยู่และเซิร์ฟเวอร์กำลังปิด ระบบจะบันทึกข้อมูลทั้งหมดไปยังโฟลเดอร์ `azael_data/azael_dc-serverlogs/logs`)
+        - **Event** = เหตุการณ์
+            - **Name** = ชื่อ (ปิดเซิร์ฟเวอร์โดย [txAdmin](https://txadm.in/) เวอร์ชัน **4.15** ขึ้นไป)
+- **Custom** = Custom - Logs
+    - **Enable** = เปิดใช้งาน ส่งคำขอ ไปยัง Custom - Logs
+    - **Using** = ใช้งาน **Localhost** หรือ **HttpRequest** (**Localhost** เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ | **HttpRequest** ส่งข้อมูลไปเก็บไว้ภายนอกเครื่องเซิร์ฟเวอร์)
     - **Localhost** = เก็บข้อมูลไว้ภายในเครื่องเซิร์ฟเวอร์ (หากใช้งาน จำเป็นที่จะต้องติดตั้ง [MongoDB](https://www.mongodb.com/try/download/community) บนเครื่องเซิร์ฟเวอร์ และ ทรัพยากร [MongoDB](https://github.com/alcoholiclobster/fivem-mongodb) สำหรับ FiveM)
         - **Resource** = ทรัพยากร (Database)
             - **Name** = ชื่อของ ทรัพยากร ที่ใช้งาน (รองรับ [MongoDB](https://github.com/alcoholiclobster/fivem-mongodb) เท่านั้น)
@@ -130,6 +144,9 @@ AZAEL.SERVER.CONFIG.Options = {
             - **Name** = ชื่อ Host หรือ Domain (IP Address หรือ example.com)
             - **Path** = เส้นทางของแอปพลิเคชัน (/api/logs/index.php)
             - **Port** = Port ที่ใช้งาน (HTTP: 80 | HTTPS: 443)
+        - **Authorization** = Authorization - ถูกกำหนดภายในส่วนหัวของคำขอ HTTP (ตัวอย่าง `Authorization: Log your_token`)
+            - **Method** = เมธอด (สามารถกำหนดเองได้)
+            - **Token** = โทเค็นความปลอดภัย ([Random Key](https://randomkeygen.com/))
 - **Hardware** = Hardware - Tokens (แสดงข้อมูลที่ช่อง เข้าสู่เซิร์ฟเวอร์ หรือ Login ในรูปแบบ JSON Array)
     - **Enable** = เปิดใช้งาน แสดงข้อมูล Hardware - Tokens ของผู้เล่น เมื่อเข้าสู่เซิร์ฟเวอร์            
 - **Screenshot** = ภาพหน้าจอ
@@ -202,7 +219,7 @@ AZAEL.SERVER.CONFIG.Colors = {
 ```
 
 {{% alert theme="info" %}}
-สนับสนุนการใช้งานแบบ string, number หรือ ^0 (สำหรับการระบุรหัสสีที่รหัสทริกเกอร์)
+สนับสนุนการใช้งานรูปแบบ number, string หรือ `'^0'` สำหรับการระบุรหัสสีที่ **TriggerEvent** หรือ **exports**
 {{% /alert %}}
 
 ### `Screenshots`

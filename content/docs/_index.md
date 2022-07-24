@@ -59,8 +59,9 @@ Azael Documentation
       <ul>
         <li><a href="/docs/azael_dc-serverlogs/installation">การติดตั้งทรัพยากร</a></li>
         <li><a href="/docs/azael_dc-serverlogs/config">การตั้งค่าทรัพยากร</a></li>
-        <li><a href="/docs/azael_dc-serverlogs/triggerevent">การติดตั้งรหัสทริกเกอร์</a></li>
-        <li><a href="/docs/azael_dc-serverlogs/download">ดาวน์โหลดตัวอย่าง</a></li>
+        <li><a href="/docs/azael_dc-serverlogs/example">การติดตั้งรหัสส่งข้อมูล</a></li>
+        <li><a href="/docs/azael_dc-serverlogs/download">ดาวน์โหลดตัวอย่างรหัส</a></li>
+        <li><a href="/docs/azael_dc-serverlogs/custom">การใช้งาน Custom Logs</a></li>
       </ul>
     </div>
     <div style="border: 1px solid lightgray; padding: 15px; margin-bottom: 5px;">
