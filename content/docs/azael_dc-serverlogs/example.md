@@ -22,7 +22,7 @@ TriggerEvent('azael_dc-serverlogs:insertData', 'eventName', content, source, 0, 
 
 ```js
 const content = 'ข้อความที่ต้องการส่งไปยังทรัพยากร azael_dc-serverlogs';
-emit('azael_dc-serverlogs:insertData', 'eventName', sendToDiscord, source, 0, false);
+emit('azael_dc-serverlogs:insertData', 'eventName', content, source, 0, false);
 ```
 
 * **azael_dc-serverlogs:insertData**
