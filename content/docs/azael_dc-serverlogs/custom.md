@@ -19,15 +19,15 @@ description: >
 1. ดาวน์โหลด [Node.js](https://nodejs.org/en/download/) และดำเนินการติดตั้งให้เรียบร้อย
 2. ดาวน์โหลดทรัพยากร [MongoDB Wrapper](https://forum.cfx.re/t/release-mongodb-wrapper-resource/149262?u=azael.dev) สำหรับ [FiveM](https://fivem.net/)
 3. แก้ไขชื่อโฟลเดอร์เป็น **mongodb** และนำไปวางไว้ภายในโฟลเดอร์ **resources**
-4. เปิดไฟล์ `server.cfg` และดำเนินการเพิ่ม
+4. กดปุ่ม <kbd>Shift</kbd> **+** <kbd>Right Click</kbd> ที่โฟลเดอร์ **mongodb**
+5. เลือก **Open PowerShell window here** เพื่อเปิดใช้งาน **PowerShell**
+6. ใช้คำสั่ง `npm install` เพื่อติดตั้ง **node_modules**
+7. ไปที่ไฟล์ `server.cfg` และดำเนินการเพิ่ม
 ```cfg
 set mongodb_url "mongodb://localhost:27017"
 set mongodb_database "your_database"
 ensure mongodb
 ```
-5. กดปุ่ม <kbd>Shift</kbd> **+** <kbd>Right Click</kbd> ที่โฟลเดอร์ **mongodb**
-6. เลือก **Open PowerShell window here** เพื่อเปิดใช้งาน **PowerShell**
-7. ใช้คำสั่ง `npm install` เพื่อติดตั้ง **node_modules**
 
 ## ใช้งาน HTTP Request
 ส่งข้อมูลบันทึกกิจกรรมต่างๆไปยังเซิร์ฟเวอร์ที่กำหนดเอง สามารถเปิดการใช้งาน **Custom - Logs** ในการตั้งค่า [Options](../config/#options) และกำหนด **Using** เป็น **HttpRequest**
