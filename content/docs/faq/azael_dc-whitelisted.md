@@ -33,6 +33,10 @@ description: >
 ## สถานะ Discord (API) 429
 [Discord API](https://discord.com/developers/docs/intro) แสดงสถานะ 429 เกิดจากการใช้งาน [API](https://discord.com/developers/docs/intro) ของผู้ให้บริการ [Discord](https://discord.com/) ที่เกิน [Rate Limit](https://discord.com/developers/docs/topics/rate-limits) และถูกทางผู้ให้บริการระงับการใช้งาน API (การถูกระงับการใช้งานมี 2 รูปแบบดังนี้ **"ต่อเส้นทาง"** และ **"ทั่วโลก"**)
 
+{{% alert theme="info" %}}
+หาก [Discord (API)](discord.com/developers/docs/intro) แสดงสถานะ 429 ผู้เล่นที่พึ่งได้รับบทบาทบนกลุ่ม [Discord](https://discord.com/) และ ยังไม่เคยเชื่อมต่อกับเซิร์ฟ จะไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้ ผู้ดูแลเซิร์ฟเวอร์จะต้องใช้คำสั่ง [เพิ่ม Whitelist](../../azael_dc-whitelisted/command/#เพม-whitelist) ให้ผู้เล่น ผู้เล่นจึงจะสามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้
+{{% /alert %}}
+
 ### ต่อเส้นทาง (Per-route)
 มีการจำกัดที่ไม่ซ้ำกันสำหรับเส้นทางที่คุณกำลังเข้าถึงบน [API ของ Discord]((https://discord.com/developers/docs/intro)) ซึ่งบางครั้งรวมถึงวิธี HTTP (`GET`, `POST`, `PUT`, `DELETE`) และรวมถึงพารามิเตอร์หลักด้วย ซึ่งหมายความว่าเมธอด HTTP ที่แตกต่างกัน (เช่น ทั้ง `GET` และ `DELETE`) อาจใช้ขีดจำกัดเดียวกันหากเส้นทางเหมือนกัน นอกจากนี้ ขีดจำกัดยังคำนึงถึงพารามิเตอร์หลักใน URL ตัวอย่าง เช่น `/channels/:channel_id` และ `/channels/:channel_id/messages/:message_id` ทั้งคู่คำนึงถึง `channel_id` เนื่องจากเป็นพารามิเตอร์หลัก ปัจจุบันพารามิเตอร์หลักเพียงอย่างเดียวคือ `channel_id`, `guild_id` และ `webhook_id + webhook_token`
 
