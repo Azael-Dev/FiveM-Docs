@@ -105,7 +105,13 @@ AZAEL.SERVER.CONFIG.Options = {
     },
 
     Debug: {
-        Enable: false
+        Console: {
+            Enable: false
+        },
+
+        Crashes: {
+            Enable: false
+        }
     }
 };
 ```
@@ -152,7 +158,10 @@ AZAEL.SERVER.CONFIG.Options = {
 - **Screenshot** = ภาพหน้าจอ
     - **Enable** = เปิดใช้งาน บันทึกภาพหน้าจอ (หากเปิดใช้งาน จำเป็นที่จะต้องติดตั้งทรัพยากร [screenshot-basic](https://github.com/citizenfx/screenshot-basic))
 - **Debug** = ข้อผิดพลาด
-    - **Enable** = เปิดใช้งาน แสดงข้อความ Debug ไปยัง Server Console
+    - **Console** = แสดงข้อความ Debug ไปยัง Server Console
+        - **Enable** = เปิดใช้งาน แสดงข้อความ Debug ไปยัง Server Console
+    - **Crashes** = เขียนไฟล์ไปยังโฟลเดอร์ `azael_data/azael_dc-serverlogs/crashes` หากพบข้อผิดพลาด (เฉพาะข้อผิดพลาดของการส่งคำขอเท่านั้น)
+        - **Enable** = เปิดใช้งาน เขียนไฟล์ไปยังโฟลเดอร์ crashes
 
 {{% alert theme="info" %}}
 **true** เท่ากับ เปิดใช้งาน | **false** เท่ากับ ปิดใช้งาน
